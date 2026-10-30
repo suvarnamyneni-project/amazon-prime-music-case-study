@@ -4,6 +4,8 @@ UX case study by **Suvarna Myneni**, Senior Product / UX Designer. I led the des
 
 **Live site:** https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/
 
+**Interactive prototype:** https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/prototype/ (a clickable recreation of the key screens and flows, with placeholder example content. Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.)
+
 > In compliance with my non-disclosure agreement, I have intentionally omitted and obscured any confidential information in this project.
 
 ## Summary
@@ -20,7 +22,7 @@ Prime Music gave Prime members a curated catalogue of one million songs to strea
 6. **Competitive Analysis:** the streaming landscape and the team's "not a me-too" positioning.
 7. **User Personas:** segments and goals from the source. There are no formal personas.
 8. **Design Decisions:** design principles; playlists plus genres; the bargain bin; a single mood and genre filter list; the store SWOT; the $0.00 vs. +Add button; and the navigation and playback pivots.
-9. **Prototype:** sketches, high-fidelity comps, sliced prototypes, and the CX spec journeys.
+9. **Prototype:** sketches, high-fidelity comps, sliced prototypes, and the CX spec journeys, plus a link to the [interactive prototype](prototype/).
 10. **UI Kit:** the Visual Design Spec and keylines, the type scale, grids, touch states, buttons, and motion timing.
 11. **Final Designs:** Kindle Fire and Android screens.
 12. **Outcome:** the launch, the post-launch redesign, customer quotes, and what I learned.
@@ -33,6 +35,7 @@ All content comes from my Prime Music project document, reworded and organized i
 ## Structure
 
 - `index.html`: the case study page (static, GitHub Pages)
+- `prototype/`: the interactive prototype (`index.html`, `app.css`, `app.js`, no dependencies). The screen list and hotspot hints are in the side panel, and deep links such as `prototype/#album/a2` work.
 - `assets/`: optimized images from the project document, plus `style.css`, `site.js` (section progress and image lightbox), and `favicon.svg`
 
 Contact: [LinkedIn](https://www.linkedin.com/in/suvarnamyneni/)

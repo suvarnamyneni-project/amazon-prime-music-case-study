@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prime Music — interactive design prototype by Suvarna Myneni</title>
+  <meta name="description" content="Clickable HTML/CSS/JS prototype of the Prime Music experience, recreated from Suvarna Myneni's case study designs. Example content only; not an Amazon product.">
+  <meta name="author" content="Suvarna Myneni">
+  <meta name="theme-color" content="#0f1114">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="device" aria-label="Prototype device frame">
+    <div class="screen" id="screen">
+      <div class="status"><span class="ex">EXAMPLE CONTENT</span><button type="button" id="help" aria-label="Screens and hints" title="Screens and hints">9:41 ⓘ</button></div>
+      <div class="view" id="view" aria-live="polite"></div>
+      <div id="overlay"></div>
+      <div class="navbar" aria-label="System navigation">
+        <button type="button" data-act="back" aria-label="Back"><svg class="icon" viewBox="0 0 24 24"><path d="M17 4v16L5 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+        <button type="button" data-act="home" aria-label="Prime Music home"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <button type="button" data-act="drawer" aria-label="Open navigation"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="panel" id="panel">
+    <h1>Prime Music prototype</h1>
+    <p class="by">An interactive recreation of the Prime Music screens, flows, and UI kit from my case study.</p>
+    <p class="disclaimer"><strong>Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.</strong> All artwork, songs, artists, and playlists are placeholder example content. There is no sign-in, no payment, and no audio.</p>
+
+    <h2>Viewing as</h2>
+    <div class="toggles">
+      <label><input type="radio" name="who" value="prime" checked> Prime member</label>
+      <label><input type="radio" name="who" value="nonprime"> Non-Prime customer (sees prices and the Prime upsell)</label>
+      <label><input type="checkbox" id="hints" checked> Show hotspot hints (green dots mark what’s clickable)</label>
+    </div>
+
+    <h2>Screens</h2>
+    <ol id="screens"></ol>
+
+    <h2>Flows to try</h2>
+    <ol class="flows">
+      <li><b>Welcome → Prime Music:</b> tap Continue on the welcome screen.</li>
+      <li><b>Moods &amp; genres:</b> Playlists tab → tap “All Moods &amp; Genres” → pick a mood, such as “Hard &amp; Heavy”.</li>
+      <li><b>Add to library:</b> open an album → “Add album to library” → it processes, a toast appears, and buttons change to In Library.</li>
+      <li><b>Re-find it:</b> menu (☰) → Your Library → Albums → the album you added → “more Prime songs available from this album”.</li>
+      <li><b>Play:</b> tap any song or ▶ → Now Playing with play/pause, next/previous, and a scrubber; the mini player persists.</li>
+      <li><b>Wayfinding:</b> ☰ shows Prime as its own section above Your Library and Music Store.</li>
+      <li><b>Upsell:</b> switch to Non-Prime, open the Music Store, and tap a blue Prime button.</li>
+    </ol>
+    <a class="back" href="../#prototype">← Back to the case study</a>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

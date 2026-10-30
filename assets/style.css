@@ -489,3 +489,6 @@ footer.site strong { color: var(--ink); }
 @media (min-width: 760px) { .stats { grid-template-columns: repeat(4, 1fr); } }
 blockquote cite { display: block; margin-top: 8px; font-style: normal; font-size: 0.9rem; color: var(--muted); }
 .prose h3 { margin-top: 1.4rem; }
+.cta-row { margin: 8px 0 18px; }
+.cta { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 999px; box-shadow: var(--shadow); }
+.cta:hover, .cta:focus-visible { background: var(--blue); }
