@@ -1,6 +1,6 @@
 # Amazon Prime Music — UX case study
 
-UX case study by **Suvarna Myneni**, Senior Product / UX Designer. I led the design of Prime Music for the Amazon Digital Music Store across Kindle Fire, Fire Phone, iOS, Android, desktop, and web (September 2020 – May 2021).
+UX case study by **Suvarna Myneni**, Senior Product / UX Designer. I led the design of Prime Music for the Amazon Digital Music Store across Kindle Fire, Fire Phone, iOS, Android, desktop, and web.
 
 **Live site:** https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/
 
@@ -16,7 +16,7 @@ Prime Music gave Prime members a curated catalogue of one million songs to strea
 
 The page uses the shared case-study template and `case-study.css`.
 
-1. **My Role:** design lead for the Digital Music Store, September 2020 – May 2021.
+1. **My Role:** UX Designer for the Digital Music Store.
 2. **Design Process:** discover, define, ideate, prototype, and test and deliver, drawn from the work above.
 3. **Problem:** the shift to streaming, the good/fast/cheap architecture decision, and the waterfall process.
 4. **Stakeholders:** PMs, the lead and platform designers, engineering, QA, and leadership; managing the "swinging pendulum" of feedback.
@@ -26,7 +26,7 @@ The page uses the shared case-study template and `case-study.css`.
 8. **User Personas:** representative composites of the segments and goals in the source. There are no formal research personas.
 9. **Design Decisions:** design principles; playlists plus genres; the bargain bin; a single mood and genre filter list; the store SWOT; the $0.00 vs. +Add button; and the navigation and playback pivots.
 10. **Prototype:** sketches, high-fidelity comps, sliced prototypes, and the CX spec journeys, plus a link to the [interactive prototype](prototype/).
-11. **UI Kit:** the product palette and type scale as a specimen, plus the Visual Design Spec, keylines, buttons, and motion timing.
+11. **UI Kit:** the product palette and button components, plus the button set and add-to-library motion keyframes.
 12. **Final Design:** Kindle Fire and Android screens.
 13. **Outcome:** the launch, the post-launch redesign, customer quotes, and what I learned.
 14. **Metrics:** +71% median active customers, +50% active days, +36% listening hours, and +31% new-customer retention. Reported figures, labelled Measured. The source gives no period, baseline, or method.
