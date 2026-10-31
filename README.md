@@ -2,9 +2,9 @@
 
 UX case study by **Suvarna Myneni**, Senior Product / UX Designer. I led the design of Prime Music for the Amazon Digital Music Store across Kindle Fire, Fire Phone, iOS, Android, desktop, and web.
 
-**Live site:** https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/
+**Live site:** https://suvarnamyneni.github.io/amazon-prime-music-case-study/
 
-**Interactive prototype:** https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/prototype/ (a clickable recreation of the key screens and flows, with placeholder example content. Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.)
+**Interactive prototype:** https://suvarnamyneni.github.io/amazon-prime-music-case-study/prototype/ (a clickable recreation of the key screens and flows, with placeholder example content. Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.)
 
 > In compliance with my non-disclosure agreement, I have intentionally omitted and obscured any confidential information in this project.
 
