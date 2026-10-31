@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 <title>Amazon Prime Music — Case Study · Suvarna Myneni</title>
-<meta name="description" content="One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store, and learning what happens when speed to market shapes the experience.">
+<meta name="description" content="Ad-free music, included with Prime. I designed the Amazon Music Prime experience inside the Amazon Digital Music Store on Android, for a mobile-first streaming market, and learned what happens when speed to market shapes the experience.">
 <meta name="author" content="Suvarna Myneni">
 <link rel="canonical" href="https://suvarnamyneni.github.io/amazon-prime-music-case-study/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Amazon Prime Music — Case Study · Suvarna Myneni">
-<meta property="og:description" content="One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store.">
+<meta property="og:description" content="Ad-free music, included with Prime. I designed the Amazon Music Prime experience inside the Amazon Digital Music Store on Android.">
 <meta property="og:url" content="https://suvarnamyneni.github.io/amazon-prime-music-case-study/">
 <meta property="og:image" content="https://suvarnamyneni.github.io/amazon-prime-music-case-study/assets/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="case-study.css">
 <style>
 /* Page-only. The shared case-study.css palette, type, and section structure stay as they are.
@@ -28,14 +32,14 @@ img{height:auto;object-fit:contain}
 .body > ol,
 .callout,
 .figure figcaption{
-  max-width:70ch;
+  max-width:none;
   text-align:left;
   text-wrap:pretty;
 }
 .cs-hero .lede{
   font-size:18px;
   line-height:1.7;
-  max-width:calc(70ch * 16 / 18);
+  max-width:none;
 }
 .cs-hero .hero-follow,
 .cs-section .head p,
@@ -62,13 +66,11 @@ td{
 .body > p + p{margin-top:16px}
 .body > h3{margin-bottom:0}
 .body > h3 + *{margin-top:24px}
-.callout{font-weight:400;padding:16px 20px;width:min(70ch,100%);box-sizing:border-box}
+.callout{font-weight:400;padding:16px 20px;width:100%;box-sizing:border-box}
 .card p[style*="margin-top"],
 .body p[style*="margin-top"]{margin-top:16px !important}
-.body > .card{max-width:min(70ch,100%)}
+.body > .card{max-width:none}
 .body > .card p,.body > .card li{max-width:none}
-#uikit .body > .card{max-width:none}
-#uikit .body > .card p{max-width:70ch}
 .grid,.process{align-items:stretch}
 .grid{gap:16px}
 .grid > .card,.process .step,.metric{height:100%;padding:24px}
@@ -90,52 +92,88 @@ td{
 .swot-cell ul{margin:0;padding-left:18px}
 .swot-cell li{color:var(--muted);font-size:16px;line-height:1.7}
 .swot-cell li + li{margin-top:6px}
+/* Personas: all four in one row that scrolls sideways */
+.persona-row{display:flex;flex-wrap:nowrap;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:2px;padding-bottom:14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--accent) var(--line)}
+.persona-row::-webkit-scrollbar{height:8px}
+.persona-row::-webkit-scrollbar-track{background:var(--line);border-radius:99px}
+.persona-row::-webkit-scrollbar-thumb{background:var(--accent);border-radius:99px}
+.persona-row > .persona{flex:0 0 360px;max-width:86%;scroll-snap-align:start;grid-template-columns:1fr;gap:14px;align-content:start}
+.persona-row > .persona .avatar{width:64px;height:64px;font-size:20px}
+.persona-row:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.scroll-hint{font-size:13px;color:var(--muted)}
+/* Low-fi wireframes */
+.figure.lofi{padding:20px 20px 0;background:var(--surface)}
+.lofi-scroll{overflow-x:auto}
+.lofi-svg{display:block;width:100%;min-width:560px;height:auto}
+.lofi-svg .lf-frame{fill:#FAFAFA;stroke:#6B7078;stroke-width:2}
+.lofi-svg .lf-box{fill:#E4E6EA;stroke:#8A9099;stroke-width:1.5}
+.lofi-svg .lf-btn{fill:#fff;stroke:#5B6270;stroke-width:1.5}
+.lofi-svg .lf-bar{fill:#9AA0A8}
+.lofi-svg .lf-soft{fill:#CDD1D7}
+.lofi-svg .lf-line{stroke:#8A9099;stroke-width:1.5;fill:none}
+.lofi-svg .lf-wave{stroke:#9AA0A8;stroke-width:2;fill:none}
+.lofi-svg .lf-t{font:700 15px var(--font-head);fill:#3A3F47}
+.lofi-svg .lf-s{font:500 11px var(--font);fill:#4A505C}
+.lofi-svg .lf-b{font-weight:700}
+.lofi-svg .lf-n{font:italic 11px var(--font);fill:#6B7078}
+.lofi-svg .lf-ctrl{font:600 22px var(--font);fill:#4A505C;letter-spacing:4px}
 @media (max-width:700px){
   .from-to-row,.swot-grid{grid-template-columns:1fr}
   .from-to-row > div + div{border-left:0;border-top:1px solid var(--line)}
   .swatches{grid-template-columns:1fr 1fr}
 }
+
+/* Shared portfolio footer. Self-contained; not part of the case-study template. */
+.sm-footer{background:#1F2427;color:#E9E4DF;padding:40px 24px;margin-top:64px;font-family:inherit;clear:both;position:relative;z-index:1}
+.sm-footer-inner{max-width:1200px;margin:0 auto;display:grid;gap:8px;text-align:center;justify-items:center}
+.sm-footer-name{margin:0;font-size:18px;font-weight:600;color:#FFFFFF}
+.sm-footer-role{margin:0;font-size:14px;color:#C9C2BB}
+.sm-footer-links{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;margin-top:8px}
+.sm-footer-links a{color:#FFFFFF;text-decoration:underline;text-underline-offset:3px;font-size:14px}
+.sm-footer-links a:hover,.sm-footer-links a:focus-visible{color:#F4B9A7}
+.sm-footer-copy{margin:8px 0 0;font-size:12px;color:#9D958E}
+.sm-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
-<body>
+<body id="top">
+<a class="cs-skip" href="#main" style="position:absolute;left:12px;top:-60px;z-index:100;background:#1f4fd8;color:#fff;padding:10px 14px;border-radius:6px" onfocus="this.style.top='12px'" onblur="this.style.top='-60px'">Skip to content</a>
 <nav class="cs-nav"><div class="wrap">
   <a class="back" href="https://suvarnamyneni.github.io/">← All work</a>
   <div class="links">
-    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#uikit">UI Kit</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
+    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
   </div>
 </div></nav>
 
 <header class="cs-hero"><div class="wrap">
   <div class="eyebrow">Case Study · Amazon Digital Music</div>
   <h1>Amazon Prime Music</h1>
-  <p class="lede">One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store, and learning what happens when speed to market shapes the experience.</p>
+  <p class="lede">Ad-free music, included with Prime. I designed the Amazon Music Prime experience on Android inside the Amazon Digital Music Store, for a market where streaming was already the default and most listeners were on their phones, and learned what happens when speed to market shapes the experience.</p>
   <dl class="meta">
     <div><dt>Role</dt><dd>UX Designer</dd></div>
-    <div><dt>Timeline</dt><dd>1 year</dd></div>
+    <div><dt>Timeline</dt><dd>12 months</dd></div>
     <div><dt>Team</dt><dd>3 PMs, 1 lead designer, 7 platform designers</dd></div>
-    <div><dt>Platform</dt><dd>Kindle Fire, Fire Phone, iOS, Android, desktop, web</dd></div>
+    <div><dt>Platform</dt><dd>Android</dd></div>
     <div><dt>Tools</dt><dd>Figma</dd></div>
   </dl>
   <figure class="cs-cover"><img src="assets/hero.jpg" width="1379" height="919" alt="A sketchbook with a hand-drawn Amazon logo next to an Android phone showing Prime Music."></figure>
   <p class="hero-follow"><a href="prototype/">View interactive prototype</a></p>
-  <p class="hero-follow"><strong>In compliance with my non-disclosure agreement, I have intentionally omitted and obscured any confidential information in this project.</strong></p>
 </div></header>
 
-<main>
+<main id="main">
 <section class="cs-section" id="role"><div class="wrap">
-  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I led the design of Prime Music for the Digital Music Store across Kindle Fire, Fire Phone, iOS, Android, desktop, and web. My focus was on customer pain points in browsing and discovery.</p></div></div>
+  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I led the design of the Prime Music experience for the Digital Music Store on Android, designed mobile-first. My focus was on customer pain points in browsing and discovery.</p></div></div>
   <div class="body">
     <div class="grid g3">
       <article class="card"><h3>Customer insights &amp; ideation</h3><p>Worked with three project managers and one lead designer to uncover insights and turn concepts into features that addressed customer behaviors and motivations.</p></article>
       <article class="card"><h3>Experience strategy &amp; vision</h3><p>Built frameworks and prototypes to communicate the vision, design principles, and content strategy, to align teams and support decisions.</p></article>
       <article class="card"><h3>Planning &amp; scope</h3><p>With my PM colleagues, defined the product, advocated for customer-centric goals balanced against business objectives, and prioritized and negotiated features for launch and post-launch phases.</p></article>
       <article class="card"><h3>Oversight &amp; coordination</h3><p>Led design efforts and coordinated with seven platform designers and their PM counterparts to tailor features to each platform.</p></article>
-      <article class="card"><h3>Design execution &amp; validation</h3><p>Executed designs for Kindle Fire, Android, iOS, and the iOS mobile Digital Music Store: user journeys, wireframes, prototypes, and design specifications.</p></article>
+      <article class="card"><h3>Design execution &amp; validation</h3><p>Executed designs for the Android Digital Music Store: user journeys, wireframes, prototypes, and design specifications in Figma.</p></article>
       <article class="card"><h3>Leadership</h3><p>Presented designs to executives, senior stakeholders, and Amazon teams throughout the project to gain buy-in and keep alignment with strategy.</p></article>
     </div>
     <figure class="figure">
       <img src="assets/platforms.jpg" width="746" height="420" alt="Phone, tablet, and desktop outlines each showing the amazon music logo.">
-      <figcaption>Prime Music shipped across phone, tablet, and desktop surfaces.</figcaption>
+      <figcaption>Prime Music, designed mobile-first, with Android as the reference platform.</figcaption>
     </figure>
   </div>
 </div></section>
@@ -143,7 +181,7 @@ td{
 <section class="cs-section" id="design"><div class="wrap">
   <div class="head"><div class="num">02</div><div><h2>Design Process</h2><p>End-to-end, from discovery to delivery.</p></div></div>
   <div class="body"><div class="process">
-    <div class="step"><b>Discover</b><span>The shift from downloads to streaming, a card sort with 8 participants, a playlist survey, and the customer research behind planning.</span></div>
+    <div class="step"><b>Discover</b><span>How people listen now that streaming is the default, a card sort with 8 participants, a playlist survey, and the customer research behind planning.</span></div>
     <div class="step"><b>Define</b><span>Two questions about one store and two motivations, nine design principles, and a content-prioritization framework.</span></div>
     <div class="step"><b>Ideate</b><span>Playlist-plus-genre browse, one mood and genre filter, campaign stories, and the $0.00 versus +Add button, sketched with a PM partner.</span></div>
     <div class="step"><b>Prototype</b><span>High-fidelity comps sliced into prototypes, shared as videos for feedback and leadership approval, plus CX-spec journeys.</span></div>
@@ -152,14 +190,14 @@ td{
 </div></section>
 
 <section class="cs-section" id="problem"><div class="wrap">
-  <div class="head"><div class="num">03</div><div><h2>Problem</h2><p>Music consumption had moved to on-demand streaming. Prime Music had to enter that market from inside a store built to sell downloads.</p></div></div>
+  <div class="head"><div class="num">03</div><div><h2>Problem</h2><p>On-demand streaming was simply how people listened. Prime Music had to compete in a crowded, mobile-first market from inside a store built to sell downloads.</p></div></div>
   <div class="body">
     <p class="callout">How could one store satisfy both Prime members and customers buying music, when their motivations and goals are very different? How would we use existing design patterns that were heavily optimized for selling music?</p>
     <div class="grid g3">
       <article class="card">
         <h3>Fostering stronger customer relationships</h3>
-        <p>Digital music download sales had steadily declined, with a significant shift toward on-demand streaming, which now represents a large share of the music industry’s revenue. Music consumption was changing quickly, and that was a new challenge for Amazon.</p>
-        <p style="margin-top:10px">Our task was to adapt and enter the highly competitive U.S. on-demand streaming market. Prime Music would offer a curated selection of one million songs and back-catalogue titles, available only to Prime members to stream and download. The goal was to build deeper, more meaningful relationships with Amazon customers.</p>
+        <p>Paid downloads had become a niche, and on-demand streaming made up a large share of the music industry’s revenue. Listeners already had Spotify, Apple Music, YouTube Music, and local apps on their phones, and Amazon Music now carried podcasts alongside music. For Amazon, the challenge was no longer catching up with a trend. It was giving Prime members a reason to choose Amazon Music every day.</p>
+        <p style="margin-top:10px">Our task was to make the Prime Music benefit hold its own in a highly competitive on-demand streaming market, with India’s mobile-first listeners as a core audience. Prime Music would offer a curated catalogue of songs, playlists, and back-catalogue titles, included with Prime to stream ad-free and download for offline listening. The goal was to build deeper, more meaningful relationships with Amazon customers.</p>
       </article>
       <article class="card">
         <h3>Good, fast, cheap</h3>
@@ -168,7 +206,7 @@ td{
       </article>
       <article class="card">
         <h3>Chasing waterfalls</h3>
-        <p>Work was split into parallel workstreams for the Music Library and the Digital Music Store; I led design for everything related to the store. Each feature phase started on the reference platform, Kindle Fire. Once a feature was designed and approved, engineering began building it, while I adapted it with platform designers and moved on to designing the next feature.</p>
+        <p>Work was split into parallel workstreams for the Music Library and the Digital Music Store; I led design for everything related to the store. Each feature phase started on the reference platform, Android mobile. Once a feature was designed and approved, engineering began building it, while I adapted it with platform designers and moved on to designing the next feature.</p>
         <p style="margin-top:10px">Working backward from a fixed launch with aggressive scope meant design became part of an engineering-driven process. Sign-off milestones came from engineering estimates, and design had to fit into whatever remained.</p>
       </article>
     </div>
@@ -232,7 +270,7 @@ td{
       <article class="card"><h3>Lean-forward listeners</h3><p>They actively control and select what they hear, browsing by genre and searching for something specific.</p></article>
       <article class="card"><h3>Collectors</h3><p>Paid-tier customers who invest more in building their libraries and stream four times as much. Separately, customers overall listen to only 19% of their own music library, mostly catalogue songs rather than albums.</p></article>
     </div>
-    <p>They used Kindle Fire, Fire Phone, iOS, Android, PC, Mac, and the web store on mobile and desktop. The design principles also asked us to design for the whole customer lifecycle: Unaware, Interested, First-time, Regular, and Passionate.</p>
+    <p>They listened on their phones first. The design principles also asked us to design for the whole customer lifecycle: Unaware, Interested, First-time, Regular, and Passionate.</p>
   </div>
 </div></section>
 
@@ -269,7 +307,7 @@ td{
       <article class="card">
         <div class="tag">Secondary · Market</div>
         <h3>Customer and market research</h3>
-        <p>Planning drew on what the source calls extensive customer and market research. Download sales had been declining, with on-demand streaming a large share of industry revenue. Customers use playlists to match a mood or an activity, such as relaxing, working out, cleaning, or reading. Customers listen to only 19% of their own music library, which is mostly catalogue songs rather than albums. Price sensitivity was what moved customers to on-demand streaming. Paid-tier customers invest more in building their libraries and stream four times as much. Customers expect Amazon to know them and serve personalized recommendations.</p>
+        <p>Planning drew on what the source calls extensive customer and market research. Downloads had become a small part of listening, with on-demand streaming a large share of industry revenue, and most listening happened on phones. Customers use playlists to match a mood or an activity, such as relaxing, working out, cleaning, or reading. Customers listen to only 19% of their own music library, which is mostly catalogue songs rather than albums. Price sensitivity was what moved customers to on-demand streaming. Paid-tier customers invest more in building their libraries and stream four times as much. Customers expect Amazon to know them and serve personalized recommendations.</p>
       </article>
     </div>
     <article class="card">
@@ -302,8 +340,8 @@ td{
   <div class="head"><div class="num">07</div><div><h2>Competitive Analysis</h2><p>The source document has no feature-by-feature competitor comparison. What it does show is the market Prime Music was entering, and how the team positioned against it.</p></div></div>
   <div class="body">
     <figure class="figure">
-      <img src="assets/streaming-landscape.jpg" width="1140" height="641" alt="Logos of music services: Rdio, Spotify, iTunes Radio, Beats Music, Prime Music, Deezer, Pandora, Google Play, and Rhapsody.">
-      <figcaption>The on-demand streaming landscape shown in the source: Rdio, Spotify, iTunes Radio, Beats Music, Deezer, Pandora, Google Play, and Rhapsody, with Prime Music among them.</figcaption>
+      <img src="assets/streaming-landscape.jpg" width="1140" height="641" alt="An earlier board of music service logos from the source, including Spotify and Prime Music.">
+      <figcaption>An earlier streaming landscape board from the source. By the time of this project, the field Prime Music competed in had consolidated around Spotify, Apple Music, and YouTube Music, alongside India-first apps such as JioSaavn, Gaana, and Wynk Music.</figcaption>
     </figure>
     <div style="overflow-x:auto">
     <table style="min-width:760px">
@@ -311,18 +349,18 @@ td{
       <tbody>
         <tr>
           <td>Prime Music</td>
-          <td>The best-value music service for Amazon customers. Prime Music joined free shipping, unlimited streaming of popular movies and TV shows, more than 500,000 free ebooks, and unlimited photo storage. A curated selection of one million songs and back-catalogue titles, to stream and download.</td>
+          <td>The best-value music service for Amazon customers. Prime Music sat alongside fast free delivery, Prime Video, Prime Reading, and Amazon Photos in one membership. A curated catalogue of songs, playlists, and back-catalogue titles, to stream ad-free and download.</td>
           <td>The business did not see itself as a standalone streaming service, but customers did, and they judged the experience that way. Not an exhaustive catalog.</td>
           <td>Help finding music people will love from a selection they will actually listen to, rather than a “me-too” on-demand streaming service.</td>
         </tr>
         <tr>
-          <td>Rdio, Spotify, iTunes Radio, Beats Music, Deezer, Pandora, Google Play, Rhapsody</td>
-          <td>The streaming landscape the team was entering. The source does not record each service’s features, so this row is not a scorecard.</td>
+          <td>Spotify, Apple Music, YouTube Music, JioSaavn, Gaana, Wynk Music</td>
+          <td>The streaming landscape the team was competing in, global services next to mobile-first local apps. The source does not record each service’s features, so this row is not a scorecard.</td>
           <td>Threat named in the SWOT: clarity and aesthetics versus competitors.</td>
           <td>Position against the set as value for Amazon customers, not feature parity with every peer.</td>
         </tr>
         <tr>
-          <td>Prime Instant Video and the Kindle Lending Library</td>
+          <td>Prime Video and Prime Reading</td>
           <td>In-house analogs customers already knew: Prime benefits you acquire, then use.</td>
           <td>We assumed customers would follow the acquire-then-play path set by those products. That assumption turned out to be wrong for music.</td>
           <td>Treat listening as its own behavior. A store pattern borrowed from video and ebooks did not match how people expected music to work.</td>
@@ -337,7 +375,8 @@ td{
   <div class="head"><div class="num">08</div><div><h2>User Personas</h2><p>Representative personas composed from the customer segments, survey findings, and journey-map goals in this project. The source does not include formal research personas.</p></div></div>
   <div class="body">
     <p>These four are representative composites, not people from a persona study. Names stand in for the segments the work actually described.</p>
-    <div class="grid g2">
+    <p class="scroll-hint">Scroll sideways to see all four.</p>
+    <div class="persona-row" tabindex="0" aria-label="Persona cards, scroll sideways">
       <article class="card persona">
         <div class="avatar">ML</div>
         <div>
@@ -539,71 +578,34 @@ td{
   <div class="head"><div class="num">10</div><div><h2>Prototype</h2><p>Every feature phase went through requirements, consensus, approvals, detailed specs, and handoffs. Prototypes, often shared as video, were how the team decided.</p></div></div>
   <div class="body">
     <p><a href="prototype/">View interactive prototype</a></p>
-    <p>A clickable HTML/CSS/JS recreation of the key Prime Music screens and flows: browse, moods and genres, album and playlist detail, add to library, Now Playing, library, navigation, and the Prime upsell. It uses placeholder artwork and example content. Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.</p>
+    <p>A clickable HTML/CSS/JS recreation of the key Prime Music screens and flows: browse, moods and genres, album and playlist detail, add to library, Now Playing, library, navigation, and the Prime upsell. It uses placeholder artwork and example content.</p>
     <div class="grid g3">
       <article class="card"><h3>Sketch with a partner</h3><p>I sketched and white-boarded concepts and flows with my PM partner, then went straight into high-fidelity comps. That was practical because I was working with many existing patterns.</p></article>
       <article class="card"><h3>Slice the risky parts</h3><p>Next I sliced the comps into a prototype. Early on, I prototyped only the highest-risk areas. I shared prototypes as videos and reused them for usability testing. They were the most effective way to get feedback from the team, consensus from stakeholders, and approval from senior leadership.</p></article>
       <article class="card"><h3>Put it in customers’ hands</h3><p>Once the team had a working prototype, we put it in customers’ hands. The extended beta and guerrilla testing before launch surfaced the top risks: playback, wayfinding, and playing and collecting music.</p></article>
     </div>
+    <h3 id="lofi">Low-fi sketches</h3>
     <figure class="figure">
-      <img src="assets/whiteboard-sessions.jpg" width="1600" height="553" alt="Photos of whiteboards covered in flow sketches and wireframes.">
-      <figcaption>White-boarding concepts and flows before moving to high-fidelity comps.</figcaption>
+      <img src="assets/whiteboard-sessions.jpg" width="1600" height="553" alt="Photos of whiteboards covered in hand-drawn flow sketches and wireframes.">
+      <figcaption>Hand-drawn low-fi sketches: white-boarding concepts and flows before moving to high-fidelity comps.</figcaption>
+    </figure>
+    <h3>Low-fi wireframes</h3>
+    <figure class="figure lofi">
+      <div class="lofi-scroll"><svg class="lofi-svg" viewBox="0 0 740 440" role="img" aria-labelledby="lofi-title"><title id="lofi-title">Greyscale low-fi wireframes of three phone screens: Album detail with album art, title and artist, Add to Library and Buy buttons, Start Station and a track list; Artist detail with a Start Station header, a Top Albums row and a list of songs; Now Playing with large artwork, a progress bar and playback controls.</title><g transform="translate(0,0)"><text class="lf-t" x="0" y="18">Album detail</text><rect class="lf-frame" x="0" y="32" width="220" height="400" rx="18"/><rect class="lf-box" x="16" y="52" width="84" height="84"/><path class="lf-line" d="M16 52 L44 80 M30 52 L52 74"/><rect class="lf-bar" x="110" y="58" width="90" height="8"/><rect class="lf-bar lf-soft" x="110" y="74" width="60" height="7"/><rect class="lf-btn" x="110" y="90" width="94" height="20" rx="3"/><text class="lf-s" x="157" y="104" text-anchor="middle">Add to Library</text><rect class="lf-btn" x="110" y="116" width="94" height="20" rx="3"/><text class="lf-s" x="157" y="130" text-anchor="middle">Buy</text><text class="lf-s" x="16" y="156">((•)) Start Station</text><rect class="lf-bar lf-soft" x="16" y="176" width="170" height="6"/><rect class="lf-bar lf-soft" x="16" y="200" width="180" height="6"/><rect class="lf-bar lf-soft" x="16" y="224" width="165" height="6"/><rect class="lf-bar lf-soft" x="16" y="248" width="175" height="6"/><rect class="lf-bar lf-soft" x="16" y="272" width="160" height="6"/><rect class="lf-bar lf-soft" x="16" y="296" width="170" height="6"/><text class="lf-n" x="16" y="420">Prime / non-Prime variants</text></g><g transform="translate(260,0)"><text class="lf-t" x="0" y="18">Artist detail</text><rect class="lf-frame" x="0" y="32" width="220" height="400" rx="18"/><rect class="lf-box" x="16" y="52" width="188" height="52"/><text class="lf-s" x="110" y="83" text-anchor="middle">((•)) Start Station</text><text class="lf-s lf-b" x="16" y="128">Top Albums</text><rect class="lf-box" x="16" y="138" width="30" height="30"/><rect class="lf-box" x="54" y="138" width="30" height="30"/><rect class="lf-box" x="92" y="138" width="30" height="30"/><rect class="lf-box" x="130" y="138" width="30" height="30"/><rect class="lf-box" x="168" y="138" width="30" height="30"/><rect class="lf-bar" x="16" y="190" width="80" height="8"/><rect class="lf-box" x="16" y="210" width="22" height="22"/><path class="lf-wave" d="M46 221 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0"/><rect class="lf-box" x="16" y="242" width="22" height="22"/><path class="lf-wave" d="M46 253 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0"/><rect class="lf-box" x="16" y="274" width="22" height="22"/><path class="lf-wave" d="M46 285 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0"/></g><g transform="translate(520,0)"><text class="lf-t" x="0" y="18">Now Playing</text><rect class="lf-frame" x="0" y="32" width="220" height="400" rx="18"/><rect class="lf-box" x="40" y="70" width="140" height="140"/><text class="lf-s" x="110" y="146" text-anchor="middle">((∞))</text><rect class="lf-bar lf-soft" x="24" y="300" width="172" height="5"/><rect class="lf-bar" x="24" y="300" width="70" height="5"/><text class="lf-ctrl" x="110" y="350" text-anchor="middle">«   ▶   »</text></g></svg></div>
+      <figcaption>Clean low-fi wireframes redrawn from the Album Detail whiteboard (top right in the photos above): album detail, artist detail, and Now Playing. The other boards are too small in the photos to redraw faithfully.</figcaption>
     </figure>
     <figure class="figure">
       <img src="assets/cx-spec.jpg" width="1377" height="447" alt="CX spec pages. Prime Customer Add to Library Journey A1 with four annotated screens, and Non-Prime Customer Browse Prime Playlists Journey E6 with four annotated screens.">
       <figcaption>Customer journeys from the CX spec: a Prime customer adding an album to their library, and a non-Prime customer browsing Prime Playlists.</figcaption>
     </figure>
-  </div>
-</div></section>
-
-<section class="cs-section" id="uikit"><div class="wrap">
-  <div class="head"><div class="num">11</div><div><h2>UI Kit</h2><p>The project's own visual language, shown as a specimen.</p></div></div>
-  <div class="body">
     <p>I produced six sets of documentation, two for each platform I owned, so engineering knew the requirements and QA could write test cases: a CX spec (requirements and customer journeys), a visual design spec and keylines (the design system), and motion documentation (animation keyframes for micro-interactions). This documentation needed the most rework of anything in the project and was the hardest to keep current.</p>
-    <p>The product UI below is the Prime Music specimen: dark surfaces, a blue Prime button, an orange purchase button, and a grey In Library state. Swatches use the hex values from the prototype, which follows the visual design spec.</p>
-    <div class="swatches">
-      <div class="swatch"><i style="background:#1f8ad2"></i><span>Prime button<br>#1F8AD2</span></div>
-      <div class="swatch"><i style="background:#3aa0e6"></i><span>Prime highlight<br>#3AA0E6</span></div>
-      <div class="swatch"><i style="background:#f26b1d"></i><span>Purchase<br>#F26B1D</span></div>
-      <div class="swatch"><i style="background:#ff9a1f"></i><span>Accent<br>#FF9A1F</span></div>
-      <div class="swatch"><i style="background:#f5a623"></i><span>Prime smile<br>#F5A623</span></div>
-      <div class="swatch"><i style="background:#3a4048"></i><span>In Library<br>#3A4048</span></div>
-      <div class="swatch"><i style="background:#16191e"></i><span>App background<br>#16191E</span></div>
-      <div class="swatch"><i style="background:#f2f4f6;box-shadow:inset 0 0 0 1px #c5cad3"></i><span>Text<br>#F2F4F6</span></div>
-    </div>
-    <article class="card" style="background:#16191e;color:#f2f4f6;border-color:#2c323a">
-      <h3 style="color:#f2f4f6">Buttons and states</h3>
-      <p style="color:#9aa3ad">Blue means Prime-eligible and free. Orange is purchase. Grey is already in the library.</p>
-      <p style="margin-top:16px;margin-bottom:0">
-        <span style="display:inline-block;background:#1f8ad2;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;margin:0 8px 8px 0">$0.00</span>
-        <span style="display:inline-block;background:#1f8ad2;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;margin:0 8px 8px 0">+ Add</span>
-        <span style="display:inline-block;background:#f26b1d;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;margin:0 8px 8px 0">$1.29</span>
-        <span style="display:inline-block;background:#3a4048;color:#d5d9de;padding:8px 14px;border-radius:2px;font-weight:500;font-size:13px">In Library</span>
-      </p>
-    </article>
-    <figure class="figure">
-      <img src="assets/button-states.jpg" width="1378" height="595" alt="A matrix of blue and orange button variants including $0.00, + Add, and In Library states.">
-      <figcaption>The button set: Prime and purchase states.</figcaption>
-    </figure>
-    <figure class="figure">
-      <img src="assets/micro-interaction-timing.jpg" width="1378" height="476" alt="Keyframes for the add-to-library micro-interaction, from the motion spec.">
-      <figcaption>Animation keyframes for the add-to-library micro-interaction.</figcaption>
-    </figure>
   </div>
 </div></section>
 
 <section class="cs-section dark" id="final"><div class="wrap">
-  <div class="head"><div class="num">12</div><div><h2>Final Design</h2><p>App designs for Kindle Fire and Android mobile, plus core screens from the service.</p></div></div>
+  <div class="head"><div class="num">11</div><div><h2>Final Design</h2><p>App designs for Android mobile, plus core screens from the service.</p></div></div>
   <div class="body">
     <div class="grid g2">
-      <figure class="figure">
-        <img src="assets/final-kindle-1.jpg" width="1377" height="777" alt="Two Kindle Fire tablets showing Prime Music store home with recommended content and Prime buttons.">
-        <figcaption>Kindle Fire: Prime Music home and lists.</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="assets/final-kindle-2.jpg" width="1377" height="777" alt="Two Kindle Fire tablets: Top Albums in Prime grid and an album detail with blue Prime buttons.">
-        <figcaption>Kindle Fire: Top albums in Prime and album detail.</figcaption>
-      </figure>
       <figure class="figure">
         <img src="assets/final-android-1.jpg" width="1377" height="777" alt="Three Android phones showing Prime Music lists and playlists.">
         <figcaption>Android: browse and playlists.</figcaption>
@@ -618,7 +620,7 @@ td{
       <figcaption>Prime Music on Android: home, Now Playing, and a playlist.</figcaption>
     </figure>
     <div class="grid g3">
-      <article class="card"><h3>Turbocharge your library</h3><p>Prime members can listen to and download from more than one million songs, hundreds of curated playlists, and personalized ad-free stations. Add any Prime-eligible song, album, or playlist to stream, take offline, or mix with your own collection.</p></article>
+      <article class="card"><h3>Turbocharge your library</h3><p>Prime members can listen to and download from a curated Prime catalogue, hundreds of curated playlists, and personalized ad-free stations. Add any Prime-eligible song, album, or playlist to stream, take offline, or mix with your own collection.</p></article>
       <article class="card"><h3>Complete your albums</h3><p>If you own songs from a Prime-eligible album, find the remaining tracks from your library.</p></article>
       <article class="card"><h3>Playlists for every moment</h3><p>Prime Playlists for moods and activities, built by Amazon’s music experts.</p></article>
     </div>
@@ -644,12 +646,12 @@ td{
 </div></section>
 
 <section class="cs-section" id="outcome"><div class="wrap">
-  <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>The launch held. The model did not. Follow-up work produced the Prime-only area the beta had asked for.</p></div></div>
+  <div class="head"><div class="num">12</div><div><h2>Outcome</h2><p>The launch held. The model did not. Follow-up work produced the Prime-only area the beta had asked for.</p></div></div>
   <div class="body">
     <div class="grid g2">
       <article class="card">
         <h3>Launch</h3>
-        <p>We began rolling out the updated Prime Music to Kindle Fire, iOS, Android, PC, Mac, and the Amazon Digital Music Store on mobile and desktop. The launch went off without a hitch, which was remarkable given the scale and complexity of the deployment.</p>
+        <p>We began rolling out the updated Prime Music on Android. The launch went off without a hitch, which was remarkable given the scale and complexity of the deployment.</p>
       </article>
       <article class="card">
         <h3>A not-so-fast follow</h3>
@@ -682,7 +684,7 @@ td{
 </div></section>
 
 <section class="cs-section" id="metrics"><div class="wrap">
-  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>After the redesign of Prime Music launched on iOS and Android, the median number of active customers rose by 71%. Despite that rapid growth, engagement, retention, adoption, and acquisition metrics improved.</p></div></div>
+  <div class="head"><div class="num">13</div><div><h2>Metrics</h2><p>After the redesign of Prime Music launched on Android, the median number of active customers rose by 71%. Despite that rapid growth, engagement, retention, adoption, and acquisition metrics improved.</p></div></div>
   <div class="body">
     <div class="grid g4">
       <div class="metric"><div class="v">+71%</div><div class="l">Median active customers</div><div class="n">Measured</div></div>
@@ -699,6 +701,21 @@ td{
   <div><small>Previous</small><a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk</a></div>
   <div style="text-align:right"><small>Next project</small><a href="https://suvarnamyneni.github.io/imobile-case-study/">iMobile</a></div>
 </div></div>
-<footer class="cs-foot"><div class="wrap">© 2026 Suvarna Myneni · <a href="https://www.linkedin.com/in/suvarnamyneni/">LinkedIn</a></div></footer>
+<footer class="sm-footer" role="contentinfo">
+  <div class="sm-footer-inner">
+    <p class="sm-footer-name">Suvarna Myneni</p>
+    <p class="sm-footer-role">AI-Native UX Designer · Hyderabad, India · Open to remote or Hyderabad roles</p>
+    <nav class="sm-footer-links" aria-label="Footer">
+      <a href="https://suvarnamyneni.github.io/">Portfolio home</a>
+      <a href="mailto:suvarnamyneni@gmail.com">suvarnamyneni@gmail.com</a>
+      <a href="https://suvarnamyneni.github.io/assets/Suvarna-Myneni-Resume.pdf" download>Resume</a>
+      <a href="https://www.linkedin.com/in/suvarnamyneni/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sm-sr"> (opens in a new tab)</span></a>
+    </nav>
+    <p class="sm-footer-copy">© 2026 Suvarna Myneni</p>
+  </div>
+</footer>
+<a href="#" class="cs-top" id="cs-top" aria-label="Back to top">&#8593;</a>
+<style>.cs-top{position:fixed;right:20px;bottom:20px;z-index:50;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid rgba(0,0,0,.15);background:#fff;color:#1c1c1e;font:600 18px/1 system-ui,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.08);opacity:0;pointer-events:none;transition:opacity .2s}.cs-top.show{opacity:1;pointer-events:auto}.cs-top:focus-visible{outline:2px solid #1f4fd8;outline-offset:2px;opacity:1;pointer-events:auto}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*{transition:none!important;animation:none!important}}</style>
+<script>(function(){var b=document.getElementById('cs-top');if(!b)return;function f(){b.classList.toggle('show',window.scrollY>window.innerHeight)}window.addEventListener('scroll',f,{passive:true});f();b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});})();</script>
 </body>
 </html>
