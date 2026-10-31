@@ -15,12 +15,69 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="case-study.css">
 <style>
-/* Page-only. The shared case-study.css palette, type, and section structure stay as they are. */
+/* Page-only. The shared case-study.css palette, type, and section structure stay as they are.
+   One reading measure and one left edge for column copy. Cards and grids keep their own boxes. */
 img{height:auto;object-fit:contain}
 .swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .swatch{width:auto}
-.cs-hero .hero-follow{max-width:760px;margin-top:20px}
-.cs-hero .hero-follow + .hero-follow{margin-top:12px}
+.cs-hero .lede,
+.cs-hero .hero-follow,
+.cs-section .head p,
+.body > p,
+.body > ul,
+.body > ol,
+.callout,
+.figure figcaption{
+  max-width:70ch;
+  text-align:left;
+  text-wrap:pretty;
+}
+.cs-hero .lede{
+  font-size:18px;
+  line-height:1.7;
+  max-width:calc(70ch * 16 / 18);
+}
+.cs-hero .hero-follow,
+.cs-section .head p,
+.body > p,
+.body li,
+.card p,
+.card li,
+.callout,
+.figure figcaption,
+.process .step span,
+.from-to-row > div,
+.swot-cell li,
+td{
+  font-size:16px;
+  line-height:1.7;
+  text-align:left;
+  text-wrap:pretty;
+}
+.cs-hero .hero-follow{margin-top:16px}
+.cs-hero .hero-follow + .hero-follow{margin-top:16px}
+.cs-section .head{margin-bottom:32px}
+.cs-section .head p{margin-top:16px}
+.body > * + *{margin-top:24px}
+.body > p + p{margin-top:16px}
+.body > h3{margin-bottom:0}
+.body > h3 + *{margin-top:24px}
+.callout{font-weight:400;padding:16px 20px;width:min(70ch,100%);box-sizing:border-box}
+.card p[style*="margin-top"],
+.body p[style*="margin-top"]{margin-top:16px !important}
+.body > .card{max-width:min(70ch,100%)}
+.body > .card p,.body > .card li{max-width:none}
+#uikit .body > .card{max-width:none}
+#uikit .body > .card p{max-width:70ch}
+.grid,.process{align-items:stretch}
+.grid{gap:16px}
+.grid > .card,.process .step,.metric{height:100%;padding:24px}
+.g2 > .card > h3,.g3 > .card > h3{margin-bottom:0}
+.grid .card h3 + p,.grid .card p + p{margin-top:16px !important}
+.process{gap:16px}
+.figure{padding:0;overflow:hidden}
+.figure img{border-radius:0}
+.figure figcaption{padding:12px 0 14px;margin:0}
 .from-to-row{display:grid;grid-template-columns:1fr 1fr}
 .from-to-row + .from-to-row{border-top:1px solid var(--line)}
 .from-to-row > div{padding:14px 16px}
@@ -28,10 +85,10 @@ img{height:auto;object-fit:contain}
 .from-to-head > div{font-family:var(--font-head);font-weight:700;background:#FAFAFB}
 .from-to-row:not(.from-to-head) > div:first-child{color:var(--muted)}
 .swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.swot-cell{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:20px}
+.swot-cell{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:24px}
 .swot-cell h3{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .swot-cell ul{margin:0;padding-left:18px}
-.swot-cell li{color:var(--muted);font-size:15px}
+.swot-cell li{color:var(--muted);font-size:16px;line-height:1.7}
 .swot-cell li + li{margin-top:6px}
 @media (max-width:700px){
   .from-to-row,.swot-grid{grid-template-columns:1fr}
