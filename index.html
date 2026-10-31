@@ -1,599 +1,591 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amazon Prime Music — UX case study by Suvarna Myneni</title>
-  <meta name="description" content="UX case study by Suvarna Myneni: designing Amazon Prime Music inside the Digital Music Store across Kindle Fire, iOS, Android, desktop, and web.">
-  <meta name="author" content="Suvarna Myneni">
-  <link rel="canonical" href="https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Amazon Prime Music — UX case study by Suvarna Myneni">
-  <meta property="og:description" content="Research, design decisions, prototypes, specs, and outcomes from designing Prime Music for the Amazon Digital Music Store.">
-  <meta property="og:url" content="https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/">
-  <meta property="og:image" content="https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/assets/hero.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b2a43">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amazon Prime Music — Case Study · Suvarna Myneni</title>
+<meta name="description" content="One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store, and learning what happens when speed to market shapes the experience.">
+<meta name="author" content="Suvarna Myneni">
+<link rel="canonical" href="https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Amazon Prime Music — Case Study · Suvarna Myneni">
+<meta property="og:description" content="One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store.">
+<meta property="og:url" content="https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/">
+<meta property="og:image" content="https://suvarnamyneni-project.github.io/amazon-prime-music-case-study/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="case-study.css">
 </head>
-<body id="top">
-  <a class="skip" href="#role">Skip to content</a>
+<body>
+<nav class="cs-nav"><div class="wrap">
+  <a class="back" href="https://suvarnamyneni-project.github.io/">← All work</a>
+  <div class="links">
+    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#uikit">UI Kit</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
+  </div>
+</div></nav>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="who" href="#top">Suvarna Myneni <span>Amazon Prime Music case study</span></a>
+<header class="cs-hero"><div class="wrap">
+  <div class="eyebrow">Case Study · Amazon Digital Music</div>
+  <h1>Amazon Prime Music</h1>
+  <p class="lede">One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store, and learning what happens when speed to market shapes the experience.</p>
+  <dl class="meta">
+    <div><dt>Role</dt><dd>Design lead, Digital Music Store</dd></div>
+    <div><dt>Timeline</dt><dd>Sept 2020 – May 2021</dd></div>
+    <div><dt>Team</dt><dd>3 PMs, 1 lead designer, 7 platform designers</dd></div>
+    <div><dt>Platform</dt><dd>Kindle Fire, Fire Phone, iOS, Android, desktop, web</dd></div>
+    <div><dt>Tools</dt><dd>Whiteboards, comps, prototypes, CX and visual specs</dd></div>
+  </dl>
+  <figure class="cs-cover"><img src="assets/hero.jpg" width="1379" height="919" alt="A sketchbook with a hand-drawn Amazon logo next to an Android phone showing Prime Music."></figure>
+  <p style="margin-top:20px"><a href="prototype/">View interactive prototype</a></p>
+  <p style="margin-top:12px;max-width:760px"><strong>In compliance with my non-disclosure agreement, I have intentionally omitted and obscured any confidential information in this project.</strong></p>
+</div></header>
+
+<main>
+<section class="cs-section" id="role"><div class="wrap">
+  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I led the design of Prime Music for the Digital Music Store across Kindle Fire, Fire Phone, iOS, Android, desktop, and web, from the start of the project in September 2020 until May 2021. My focus was on customer pain points in browsing and discovery.</p></div></div>
+  <div class="body">
+    <div class="grid g3">
+      <article class="card"><h3>Customer insights &amp; ideation</h3><p>Worked with three project managers and one lead designer to uncover insights and turn concepts into features that addressed customer behaviors and motivations.</p></article>
+      <article class="card"><h3>Experience strategy &amp; vision</h3><p>Built frameworks and prototypes to communicate the vision, design principles, and content strategy, to align teams and support decisions.</p></article>
+      <article class="card"><h3>Planning &amp; scope</h3><p>With my PM colleagues, defined the product, advocated for customer-centric goals balanced against business objectives, and prioritized and negotiated features for launch and post-launch phases.</p></article>
+      <article class="card"><h3>Oversight &amp; coordination</h3><p>Led design efforts and coordinated with seven platform designers and their PM counterparts to tailor features to each platform.</p></article>
+      <article class="card"><h3>Design execution &amp; validation</h3><p>Executed designs for Kindle Fire, Android, iOS, and the iOS mobile Digital Music Store: user journeys, wireframes, prototypes, and design specifications.</p></article>
+      <article class="card"><h3>Leadership</h3><p>Presented designs to executives, senior stakeholders, and Amazon teams throughout the project to gain buy-in and keep alignment with strategy.</p></article>
     </div>
-    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-  </header>
+    <figure class="figure">
+      <img src="assets/platforms.jpg" width="746" height="420" alt="Phone, tablet, and desktop outlines each showing the amazon music logo.">
+      <figcaption>Prime Music shipped across phone, tablet, and desktop surfaces.</figcaption>
+    </figure>
+  </div>
+</div></section>
 
-  <div class="layout">
-    <nav class="steps" aria-label="Case study sections">
-      <p class="label kicker">Process</p>
-      <ol>
-        <li><a href="#role" aria-current="true"><span class="n">00</span> My Role</a></li>
-        <li><a href="#problem"><span class="n">01</span> Design Problem</a></li>
-        <li><a href="#stakeholders"><span class="n">02</span> Stakeholders</a></li>
-        <li><a href="#end-users"><span class="n">03</span> End-users</a></li>
-        <li><a href="#primary-research"><span class="n">04</span> Primary Research</a></li>
-        <li><a href="#secondary-research"><span class="n">05</span> Secondary Research</a></li>
-        <li><a href="#competitive"><span class="n">06</span> Competitive Analysis</a></li>
-        <li><a href="#personas"><span class="n">07</span> User Personas</a></li>
-        <li><a href="#decisions"><span class="n">08</span> Design Decisions</a></li>
-        <li><a href="#prototype"><span class="n">09</span> Prototype</a></li>
-        <li><a href="#ui-kit"><span class="n">10</span> UI Kit</a></li>
-        <li><a href="#final"><span class="n">11</span> Final Designs</a></li>
-        <li><a href="#outcome"><span class="n">12</span> Outcome</a></li>
-        <li><a href="#metrics"><span class="n">13</span> Metrics</a></li>
-        
-      </ol>
-    </nav>
+<section class="cs-section" id="design"><div class="wrap">
+  <div class="head"><div class="num">02</div><div><h2>Design Process</h2><p>End-to-end, from discovery to delivery.</p></div></div>
+  <div class="body"><div class="process">
+    <div class="step"><b>Discover</b><span>Market shift since 2019, a card sort with 8 participants, a playlist survey, and the customer research behind planning.</span></div>
+    <div class="step"><b>Define</b><span>Two questions about one store and two motivations, nine design principles, and a content-prioritization framework.</span></div>
+    <div class="step"><b>Ideate</b><span>Playlist-plus-genre browse, one mood and genre filter, campaign stories, and the $0.00 versus +Add button, sketched with a PM partner.</span></div>
+    <div class="step"><b>Prototype</b><span>High-fidelity comps sliced into prototypes, shared as videos for feedback and leadership approval, plus CX-spec journeys.</span></div>
+    <div class="step"><b>Test &amp; Deliver</b><span>Button test with 16 participants, beta and guerrilla testing, launch on June 11, then a diary study and a Prime-only area.</span></div>
+  </div></div>
+</div></section>
 
-    <div class="content">
-      <header class="hero">
-        <div class="wrap">
-          <p class="kicker">UX case study</p>
-          <h1>Amazon Prime Music</h1>
-          <p class="lead">One million songs, free for Prime members. Designing a streaming music benefit inside the Amazon Digital Music Store, and learning what happens when speed to market shapes the experience.</p>
-          <div class="meta">
-            <div><b>Role</b> Design lead, Digital Music Store</div>
-            <div><b>Timeline</b> Sept 2020 – May 2021</div>
-            <div><b>Platforms</b> Kindle Fire, Fire Phone, iOS, Android, desktop, web</div>
-            <div><b>Team</b> 3 PMs, 1 lead designer, 7 platform designers</div>
-          </div>
-          <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime Music on Android, from the project cover">
-                <img src="assets/hero.jpg" width="1379" height="919" alt="A sketchbook with a hand-drawn Amazon logo next to an Android phone showing Prime Music.">
-              </button>
-              <figcaption>Prime Music on Android, from the project cover.</figcaption>
-            </figure>
-          <p class="cta-row"><a class="cta" href="prototype/">View interactive prototype →</a></p>
-          <p class="note"><strong>In compliance with my non-disclosure agreement, I have intentionally omitted and obscured any confidential information in this project.</strong></p>
-          <p class="note">Select any image to enlarge it. Arrow keys move between images. Escape closes the view.</p>
-        </div>
-      </header>
+<section class="cs-section" id="problem"><div class="wrap">
+  <div class="head"><div class="num">03</div><div><h2>Problem</h2><p>Music consumption had moved to on-demand streaming. Prime Music had to enter that market from inside a store built to sell downloads.</p></div></div>
+  <div class="body">
+    <p class="callout">How could one store satisfy both Prime members and customers buying music, when their motivations and goals are very different? How would we use existing design patterns that were heavily optimized for selling music?</p>
+    <div class="grid g3">
+      <article class="card">
+        <h3>Fostering stronger customer relationships</h3>
+        <p>Since 2019, digital music download sales had steadily declined, with a significant shift toward on-demand streaming, which now represents a large share of the music industry’s revenue. Music consumption was changing quickly, and that was a new challenge for Amazon.</p>
+        <p style="margin-top:10px">Our task was to adapt and enter the highly competitive U.S. on-demand streaming market. Prime Music would offer a curated selection of one million songs and catalogue titles (at least six months old), available only to Prime members to stream and download. The goal was to build deeper, more meaningful relationships with Amazon customers.</p>
+      </article>
+      <article class="card">
+        <h3>Good, fast, cheap</h3>
+        <p>To launch quickly, we were asked to design and build Prime Music inside the existing Digital Music Store and Music Library architecture. It was seen as the least risky option. The core assumption: millions of customers visit Amazon daily, so extending the familiar “acquire, play, manage” model would get the product to market faster and at lower cost.</p>
+        <p style="margin-top:10px">That early architectural decision shaped the quality of the customer experience, both in what we could create and in how we could meet user expectations.</p>
+      </article>
+      <article class="card">
+        <h3>Chasing waterfalls</h3>
+        <p>Work was split into parallel workstreams for the Music Library and the Digital Music Store; I led design for everything related to the store. Each feature phase started on the reference platform, Kindle Fire. Once a feature was designed and approved, engineering began building it, while I adapted it with platform designers and moved on to designing the next feature.</p>
+        <p style="margin-top:10px">Working backward from a fixed launch date with aggressive scope meant design became part of an engineering-driven process. Sign-off milestones came from engineering estimates, and design got whatever time was left.</p>
+      </article>
+    </div>
+    <figure class="figure">
+      <img src="assets/waterfall.jpg" width="746" height="387" alt="A stepped waterfall diagram of sequential phases.">
+      <figcaption>The serialized, waterfall delivery model: each feature phase ran design, approval, then build.</figcaption>
+    </figure>
+  </div>
+</div></section>
 
-      <main>
-        <section id="role">
-          <div class="wrap">
-            <p class="kicker"><span class="n">00</span> My Role</p>
-            <h2>Intro and my role</h2>
-            <div class="prose">
-              <p>I led the design of Prime Music for the Digital Music Store across Kindle Fire, Fire Phone, iOS, Android, desktop, and web, from the start of the project in September 2020 until May 2021. My focus was on customer pain points in browsing and discovery.</p>
-            </div>
-            <div class="goals">
-              <article class="goal"><h3>Customer insights &amp; ideation</h3><p>Worked with three project managers and one lead designer to uncover insights and turn concepts into features that addressed customer behaviors and motivations.</p></article>
-              <article class="goal"><h3>Experience strategy &amp; vision</h3><p>Built frameworks and prototypes to communicate the vision, design principles, and content strategy, to align teams and support decisions.</p></article>
-              <article class="goal"><h3>Planning &amp; scope</h3><p>With my PM colleagues, defined the product, advocated for customer-centric goals balanced against business objectives, and prioritized and negotiated features for launch and post-launch phases.</p></article>
-              <article class="goal"><h3>Oversight &amp; coordination</h3><p>Led design efforts and coordinated with seven platform designers and their PM counterparts to tailor features to each platform.</p></article>
-              <article class="goal"><h3>Design execution &amp; validation</h3><p>Executed designs for Kindle Fire, Android, iOS, and the iOS mobile Digital Music Store: user journeys, wireframes, prototypes, and design specifications.</p></article>
-              <article class="goal"><h3>Leadership</h3><p>Presented designs to executives, senior stakeholders, and Amazon teams throughout the project to gain buy-in and keep alignment with strategy.</p></article>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime Music shipped across phone, tablet, and desktop surfaces">
-                <img src="assets/platforms.jpg" width="746" height="420" alt="Phone, tablet, and desktop outlines each showing the amazon music logo." loading="lazy">
-              </button>
-              <figcaption>Prime Music shipped across phone, tablet, and desktop surfaces.</figcaption>
-            </figure>
-          </div>
-        </section>
+<section class="cs-section" id="stakeholders"><div class="wrap">
+  <div class="head"><div class="num">04</div><div><h2>Stakeholders</h2><p>The project touched every part of the music business, so I had to coordinate with, and get buy-in from, many teams, both co-located and distributed.</p></div></div>
+  <div class="body">
+    <div style="overflow-x:auto">
+    <table style="min-width:720px">
+      <thead><tr><th>Stakeholder</th><th>What they need</th><th>How I worked with them</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Product management</td>
+          <td>A defined product, with customer-centric goals balanced against business objectives, and a launch versus post-launch split.</td>
+          <td>Three project managers. I sketched and white-boarded flows with a PM partner, and we prioritized and negotiated features together.</td>
+        </tr>
+        <tr>
+          <td>Design</td>
+          <td>A shared vision, design principles, and content strategy that each platform could tailor.</td>
+          <td>Worked with one lead designer. Led design and coordinated seven platform designers and their PM counterparts.</td>
+        </tr>
+        <tr>
+          <td>Engineering</td>
+          <td>Approved designs and specifications they could build against a fixed launch date.</td>
+          <td>Their estimates set sign-off milestones. They built from the specs. A mini-hackathon later fixed critical playback issues found in beta.</td>
+        </tr>
+        <tr>
+          <td>Quality assurance</td>
+          <td>Documentation clear enough to write test cases.</td>
+          <td>CX specs, visual design specs and keylines, and motion documentation, two sets for each platform I owned.</td>
+        </tr>
+        <tr>
+          <td>Leadership</td>
+          <td>Confidence that the design matched strategy, and a way to approve it.</td>
+          <td>Presented to executives, senior stakeholders, and senior leadership throughout. Prototypes shared as videos were what got approval.</td>
+        </tr>
+        <tr>
+          <td>Music Library and other teams</td>
+          <td>A store workstream that still fit the library, and patterns that depended on teams outside music.</td>
+          <td>Parallel workstream to mine. The SWOT later named reliance on non-music teams as a weakness of building inside the store.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <article class="card"><p>“Managing feedback was even more challenging and felt like a swinging pendulum of viewpoints.”</p></article>
+    <p>The team spent a disproportionate amount of time debating design decisions when data could not easily be gathered. The result was agony, paralysis, and growing skepticism about instinct in the design process. I noticed this early and invested in documentation that explained design rationale. It was time-consuming upfront, but it saved a lot of back-and-forth later. Design principles and a content prioritization framework made my decision-making visible and helped the team share the vision.</p>
+    <p>Prototypes, shared as videos, became the most effective way to get feedback from the team, consensus from stakeholders, and approval from senior leadership.</p>
+  </div>
+</div></section>
 
-        <section id="problem">
-          <div class="wrap">
-            <p class="kicker"><span class="n">01</span> Design Problem</p>
-            <h2>Design problem</h2>
-            <div class="prose">
-              <h3>Fostering stronger customer relationships</h3>
-              <p>Since 2019, digital music download sales had steadily declined, with a significant shift toward on-demand streaming, which now represents a large share of the music industry's revenue. Music consumption was changing quickly, and that was a new challenge for Amazon.</p>
-              <p>Our task was to adapt and enter the highly competitive U.S. on-demand streaming market. Prime Music would offer a curated selection of one million songs and catalogue titles (at least six months old), available only to Prime members to stream and download. The goal was to build deeper, more meaningful relationships with Amazon customers.</p>
-              <h3>Good, fast, cheap</h3>
-              <p>To launch quickly, we were asked to design and build Prime Music inside the existing Digital Music Store and Music Library architecture. It was seen as the least risky option. The core assumption: millions of customers visit Amazon daily, so extending the familiar “acquire, play, manage” model would get the product to market faster and at lower cost.</p>
-              <p>That early architectural decision shaped the quality of the customer experience, both in what we could create and in how we could meet user expectations.</p>
-              <h3>Chasing waterfalls</h3>
-              <p>Work was split into parallel workstreams for the Music Library and the Digital Music Store; I led design for everything related to the store. Each feature phase started on the reference platform, Kindle Fire. Once a feature was designed and approved, engineering began building it, while I adapted it with platform designers and moved on to designing the next feature.</p>
-              <p>Working backward from a fixed launch date with aggressive scope meant design became part of an engineering-driven process. Sign-off milestones came from engineering estimates, and design got whatever time was left.</p>
-              <h3>The core design questions</h3>
-              <ol>
-                <li>How could one store satisfy both Prime members and customers buying music, when their motivations and goals are very different?</li>
-                <li>How would we use existing design patterns that were heavily optimized for selling music?</li>
-              </ol>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: The serialized, waterfall delivery model: each feature phase ran design, approval, then build">
-                <img src="assets/waterfall.jpg" width="746" height="387" alt="A stepped waterfall diagram of sequential phases." loading="lazy">
-              </button>
-              <figcaption>The serialized, waterfall delivery model: each feature phase ran design, approval, then build.</figcaption>
-            </figure>
-          </div>
-        </section>
+<section class="cs-section" id="users"><div class="wrap">
+  <div class="head"><div class="num">05</div><div><h2>End Users</h2><p>Embedding Prime Music in the Amazon Digital Music Store meant the experience had to work for everyone already in that store, not only for members coming to stream.</p></div></div>
+  <div class="body">
+    <div class="grid g3">
+      <article class="card"><h3>Prime members</h3><p>They get Prime Music at no extra cost and can stream, download, and add Prime-eligible songs, albums, and playlists to their library. Many felt they had already paid for the music through their membership.</p></article>
+      <article class="card"><h3>Non-Prime customers</h3><p>They buy music in the same store. Their goals are about purchase, so the same screens had to keep selling while a second audience was trying to collect music for free.</p></article>
+      <article class="card"><h3>Existing music owners</h3><p>They had bought songs, on Amazon or elsewhere, that belonged to Prime-eligible albums, and could complete those albums from their library.</p></article>
+      <article class="card"><h3>Lean-back listeners</h3><p>They want music curated for them. This maps to the playlist finding: “I don’t have to think. Someone else put it together for me.”</p></article>
+      <article class="card"><h3>Lean-forward listeners</h3><p>They actively control and select what they hear, browsing by genre and searching for something specific.</p></article>
+      <article class="card"><h3>Collectors</h3><p>Paid-tier customers who invest more in building their libraries and stream four times as much. Separately, customers overall listen to only 19% of their own music library, mostly catalogue songs rather than albums.</p></article>
+    </div>
+    <p>They used Kindle Fire, Fire Phone, iOS, Android, PC, Mac, and the web store on mobile and desktop. The design principles also asked us to design for the whole customer lifecycle: Unaware, Interested, First-time, Regular, and Passionate.</p>
+  </div>
+</div></section>
 
-        <section id="stakeholders">
-          <div class="wrap">
-            <p class="kicker"><span class="n">02</span> Stakeholders</p>
-            <h2>Stakeholders</h2>
-            <div class="prose">
-              <p>The project touched every part of the music business, so I had to coordinate with, and get buy-in from, many teams, both co-located and distributed.</p>
-              <ul>
-                <li><strong>Product management:</strong> three project managers, plus a PM partner I sketched and white-boarded flows with.</li>
-                <li><strong>Design:</strong> one lead designer, and seven platform designers with their PM counterparts.</li>
-                <li><strong>Engineering:</strong> platform engineering teams whose estimates set sign-off milestones, and who built from my specs.</li>
-                <li><strong>Quality assurance:</strong> teams who wrote test cases from the design documentation.</li>
-                <li><strong>Leadership:</strong> executives, senior stakeholders, and senior leadership who approved designs.</li>
-                <li><strong>Other teams:</strong> the Music Library workstream, and other teams outside music that the store approach relied on.</li>
-              </ul>
-            </div>
-            <blockquote>“Managing feedback was even more challenging and felt like a swinging pendulum of viewpoints.”</blockquote>
-            <div class="prose">
-              <p>The team spent a disproportionate amount of time debating design decisions when data could not easily be gathered. The result was agony, paralysis, and growing skepticism about instinct in the design process. I noticed this early and invested in documentation that explained design rationale. It was time-consuming upfront, but it saved a lot of back-and-forth later. Design principles and a content prioritization framework made my decision-making visible and helped the team share the vision.</p>
-              <p>Prototypes, shared as videos, became the most effective way to get feedback from the team, consensus from stakeholders, and approval from senior leadership.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="end-users">
-          <div class="wrap">
-            <p class="kicker"><span class="n">03</span> End-users</p>
-            <h2>End-users</h2>
-            <div class="prose">
-              <p>Embedding Prime Music in the Amazon Digital Music Store meant the experience had to work for everyone:</p>
-              <ul>
-                <li><strong>Prime members</strong>, who get Prime Music at no extra cost and can stream, download, and add Prime-eligible songs, albums, and playlists to their library.</li>
-                <li><strong>Non-Prime customers</strong> buying music in the same store, whose goals are about purchase.</li>
-                <li><strong>Existing music owners</strong> who had bought songs (on Amazon or elsewhere) that belonged to Prime-eligible albums, and could complete those albums from their library.</li>
-              </ul>
-              <p>Research split listeners into two primary segments: <strong>lean-back</strong> listeners, who want music curated for them, and <strong>lean-forward</strong> listeners, who actively control and select what they hear. They used Kindle Fire, Fire Phone, iOS, Android, PC, Mac, and the web store on mobile and desktop.</p>
-              <p>The design principles also asked us to design for the whole customer lifecycle: Unaware, Interested, First-time, Regular, and Passionate.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="primary-research">
-          <div class="wrap">
-            <p class="kicker"><span class="n">04</span> Primary Research</p>
-            <h2>Primary research</h2>
-            <div class="prose">
-              <h3>Hierarchical card sort (8 participants)</h3>
-              <p>I hypothesized that Prime-eligible content should be prioritized differently when a customer does not have high purchase intent. With no qualitative data to support that, I ran a hierarchical card sort with eight participants to learn how customers think about categories of content and what matters most to them in the context of Prime.</p>
-              <p>In the think-aloud, participants ranked content by what felt predictable and trustworthy as relevant, then by what made them curious, and last by what they were skeptical about. Genre ranked first and Playlist second; Featured ranked last.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Card sort results with the voice of the customer">
-                <img src="assets/card-sort-results.jpg" width="1380" height="275" alt="Card sort results table. Genre rank 1 (weighted score 1.25), Playlist 2 (1.875), Recommended 3 (2.75), Popular 4 (4.5), New 4 (4.5), Featured 5 (6), with per-participant ranks P1 to P8 and a voice-of-the-customer quote for each." loading="lazy">
-              </button>
-              <figcaption>Card sort results with the voice of the customer. Genre: “Most obvious, I know what to expect.” Playlist: “I don’t have to think. Someone else put it together for me.” Featured: “Money was paid to feature this. It’s what ‘they’ want to push.”</figcaption>
-            </figure>
-            <div class="prose">
-              <h3>Large-scale playlist survey</h3>
-              <p>We surveyed casual listeners about how they identify with and choose playlists:</p>
-              <ol>
-                <li>Genre and mood were the strongest influences when choosing music. Activity was also reported.</li>
-                <li>Genre is used to find music that matches a mood, or to exclude certain types of music.</li>
-                <li>Customers think about moods and genres in heavily overlapping ways.</li>
-              </ol>
-              <h3>Button usability test (16 participants)</h3>
-              <p>Two button concepts, <strong>$0.00</strong> and <strong>+Add</strong>, were tested with 16 participants (results under Design Decisions).</p>
-              <h3>Extended beta and guerrilla testing</h3>
-              <p>Two months before launch we ran an extended beta and guerrilla user testing. The top risks were: (1) playback quality, performance, and stability; (2) wayfinding; and (3) playing and collecting music. These were the same issues we heard after launch.</p>
-              <h3>Post-launch diary study and usability testing</h3>
-              <p>After launch I led a research plan to get deeper qualitative insight into pain points and opportunities. Over two weeks we ran a diary study and usability testing, and tested the viability of future concepts. I shared the learnings as a customer journey map.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: The Prime Music customer journey map">
-                <img src="assets/journey-map.jpg" width="1378" height="602" alt="Prime Music customer journey map with aspirational and existing pain-point emotion lines across Explore and Re-find stages, opportunity tags, and customer goals. A magnified callout shows a frustrated customer quote about being asked to pay." loading="lazy">
-              </button>
-              <figcaption>The Prime Music customer journey map. It compared the aspirational experience with today’s pain points, and helped the team see how broken the Library and Digital Music Store model was.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="secondary-research">
-          <div class="wrap">
-            <p class="kicker"><span class="n">05</span> Secondary Research</p>
-            <h2>Secondary research</h2>
-            <div class="prose">
-              <p>Planning drew on what the source calls extensive customer and market research. It does not say which findings came from which method or source, so they are grouped here.</p>
-              <ul>
-                <li><strong>Market shift:</strong> download sales declining since 2019, with on-demand streaming making up a large share of industry revenue.</li>
-                <li><strong>Playlists go with activities:</strong> customers use playlists to match a mood or an activity, such as relaxing, working out, cleaning, or reading.</li>
-                <li><strong>Songs remain the same:</strong> customers listen to only 19% of their own music library, which is mostly catalogue songs rather than albums.</li>
-                <li><strong>Streaming to save:</strong> price sensitivity was what moved customers to on-demand streaming.</li>
-                <li><strong>Collectors listen more:</strong> paid-tier customers invest more in building their libraries and stream four times as much.</li>
-                <li><strong>Show me you know me:</strong> customers expect Amazon to know them and serve personalized recommendations.</li>
-              </ul>
-              <p>I also drew on published methods: reversing the polarity of an assumption, from Marty Neumeier’s <em>Metaskills: Five Talents for the Robotic Age</em>, and the Think, Do, Feel exercise from <em>Gamestorming</em>.</p>
-            </div>
-            <div class="grid-2"><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Genres as a familiar way to browse">
-                <img src="assets/genre-moods.jpg" width="746" height="560" alt="Bubble chart of genres: Pop largest, with Alternative and Indie, Rock, Country, Christian and Gospel, Hip Hop, and Classical." loading="lazy">
-              </button>
-              <figcaption>Genres as a familiar way to browse.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: “Show me you know me”: customers expect personalized recommendations">
-                <img src="assets/personalized-tiles.jpg" width="486" height="274" alt="A grid of music tiles with one tile marked by a heart." loading="lazy">
-              </button>
-              <figcaption>“Show me you know me”: customers expect personalized recommendations.</figcaption>
-            </figure></div>
-          </div>
-        </section>
-
-        <section id="competitive">
-          <div class="wrap">
-            <p class="kicker"><span class="n">06</span> Competitive Analysis</p>
-            <h2>Competitive analysis</h2>
-            <div class="prose">
-              <p>The source document has no feature-by-feature competitor comparison. What it does show is the market Prime Music was entering, and how the team positioned against it.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: The on-demand streaming landscape shown in the source: Rdio, Spotify, iTunes Radio, Beats Music, Deezer, Pandora, Google Play, and Rhapsody, with Prime Music among them">
-                <img src="assets/streaming-landscape.jpg" width="1140" height="641" alt="Logos of music services: Rdio, Spotify, iTunes Radio, Beats Music, Prime Music, Deezer, Pandora, Google Play, and Rhapsody." loading="lazy">
-              </button>
-              <figcaption>The on-demand streaming landscape shown in the source: Rdio, Spotify, iTunes Radio, Beats Music, Deezer, Pandora, Google Play, and Rhapsody, with Prime Music among them.</figcaption>
-            </figure>
-            <div class="prose">
-              <ul>
-                <li><strong>Positioning:</strong> the best-value music service for Amazon customers, not a “me-too” on-demand streaming service. Not an exhaustive catalog, but help finding music people will love from a selection they will actually listen to.</li>
-                <li><strong>The Prime bundle:</strong> Prime Music joined two-day free shipping, unlimited streaming of popular movies and TV shows, more than 500,000 free ebooks, and unlimited photo storage.</li>
-                <li><strong>In-house analogs:</strong> we assumed customers would follow the acquire-then-play path set by Prime Instant Video and the Kindle Lending Library. That assumption turned out to be wrong for music.</li>
-                <li><strong>Customers’ mental model:</strong> the business did not see itself as a standalone streaming service, but customers did, and they judged the experience that way.</li>
-                <li><strong>Threat named in the SWOT:</strong> clarity and aesthetics versus competitors.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="personas">
-          <div class="wrap">
-            <p class="kicker"><span class="n">07</span> User Personas</p>
-            <h2>User personas</h2>
-            <div class="prose">
-              <p>The source does not include formal personas. It describes customer segments and goals, summarized here.</p>
-            </div>
-            <div class="goals">
-              <article class="goal"><h3>Lean-back listener</h3><p>Prefers a passive experience where music is curated for them. Maps to the playlist finding: “I don’t have to think. Someone else put it together for me.”</p></article>
-              <article class="goal"><h3>Lean-forward listener</h3><p>Actively controls and selects what they listen to.</p></article>
-              <article class="goal"><h3>Collector</h3><p>A paid-tier customer who invests in building a library and streams four times as much.</p></article>
-              <article class="goal"><h3>Prime member vs. music buyer</h3><p>Prime members felt they had already paid for the music through their membership; purchasing customers came to the same store to buy.</p></article>
-            </div>
-            <div class="prose">
-              <p>The journey map listed customer goals by stage, including: “I want to find familiar music I love,” “I want to discover new music you think I’ll love,” “I want to type as little as possible and get to results as quickly as possible,” and “I want to quickly listen to music I’ve recently listened to.”</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="decisions">
-          <div class="wrap">
-            <p class="kicker"><span class="n">08</span> Design Decisions</p>
-            <h2>Design decisions</h2>
-            <div class="prose">
-              <h3>Design principles</h3>
-              <p>A set of nine principles made my decision-making visible to the team.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Design principles: Show the customer we know them">
-                <img src="assets/design-principles.jpg" width="1380" height="1035" alt="Nine principle cards on dark tiles." loading="lazy">
-              </button>
-              <figcaption>Design principles: Show the customer we know them. Personal and personalized. Do all the heavy lifting for the customer. Lead with meaningful content. Avoid dead ends. Build for customers on the go. Fit and finish matter. Design for the customer experience at all stages. Music is the experience.</figcaption>
-            </figure>
-            <div class="prose">
-              <h3>1. Content first: playlists plus genres</h3>
-              <p>The card sort showed we needed to prioritize playlist content, and that genres were a familiar way to browse. I combined the two into the Prime Playlist browse experience, then paired the category ranking with feasibility scores to build the rest of the browse structure.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: The browse structure, built from category rankings and feasibility scores">
-                <img src="assets/browse-structure.jpg" width="1380" height="715" alt="A tree diagram of the store browse structure." loading="lazy">
-              </button>
-              <figcaption>The browse structure, built from category rankings and feasibility scores.</figcaption>
-            </figure>
-            <div class="prose">
-              <h3>2. Dreams of the bargain bin</h3>
-              <p>I imagined the worst possible perception of Prime Music: the bargain bin in a record store, discounted music nobody wanted. Listing its traits gave me the opposite principles for planning content. It became clear customers would get more value if we told a story behind the music. Campaign composites got the team excited about that future, even though many concepts weren’t feasible for launch.</p>
-            </div>
-            <div class="grid-2"><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Reversing the bargain bin into content principles">
-                <img src="assets/bargain-bin.jpg" width="1600" height="1064" alt="Whiteboard: The Bargain Bin mapped to Prime Music. Music nobody listens to becomes popular, quality selection for everyone; music by has-beens becomes timeless classics; mass of no value becomes good value, your listening is better; painful to dig through becomes personalized, curated, timely, topical; cast to given away becomes limited, scarce, exclusive." loading="lazy">
-              </button>
-              <figcaption>Reversing the bargain bin into content principles.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Campaign composites for storytelling around Prime content">
-                <img src="assets/campaign-composites.jpg" width="1377" height="775" alt="Dark campaign tiles: Prime Classics, Pop Workout, 2013, and other editorial playlists." loading="lazy">
-              </button>
-              <figcaption>Campaign composites for storytelling around Prime content.</figcaption>
-            </figure></div>
-            <div class="prose">
-              <h3>3. Moody listening: one filter list</h3>
-              <p>Because genre and mood overlap so much in customers’ minds, I designed Prime Playlist browse as a single filter list. It reduces upfront decisions, removes the need to switch between genre and mood, and carries a stronger information scent.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime Playlist browse with a single combined filter list">
-                <img src="assets/playlist-filter-flow.jpg" width="1380" height="656" alt="Four screens showing the Prime Playlists browse opening a single genre and mood filter list." loading="lazy">
-              </button>
-              <figcaption>Prime Playlist browse with a single combined filter list.</figcaption>
-            </figure>
-            <div class="prose">
-              <h3>4. The Everything Store: “buy” Prime music for free</h3>
-              <p>The Store-plus-Prime direction felt wrong from the start, but the decision was made. Instead of catastrophizing, I analyzed the approach’s strengths and modeled Prime Music on what customers already knew: discovering and buying music in Amazon’s store. We proposed letting Prime members purchase Prime-eligible music for free. The next challenge was showing which content was Prime-eligible and how to collect and play it.</p>
-            </div>
-            <div class="grid-2"><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: SWOT of the Store + Prime Music approach">
-                <img src="assets/swot.jpg" width="1380" height="1035" alt="Handwritten SWOT. Strengths: familiar context, existing browse and search patterns, familiar taxonomy, one destination, customers spend time in Store. Weaknesses: unfocused and unoptimized, confusion with physical shopping, hard to find free, extensibility of patterns, reliance on non-music teams. Opportunities: upsell and value comparison, traffic, promotion experiments, cross-category journeys, no Prime results lead to sales. Threats: clarity and aesthetics vs. competitors, accidental purchases, usability, not extensible, requires internet connection." loading="lazy">
-              </button>
-              <figcaption>SWOT of the Store + Prime Music approach.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Store recommendation patterns reused for Prime">
-                <img src="assets/store-recommendations.jpg" width="1380" height="477" alt="Store carousels titled Prime Members Also Listened To and Customers Also Bought." loading="lazy">
-              </button>
-              <figcaption>Store recommendation patterns reused for Prime.</figcaption>
-            </figure></div>
-            <div class="prose">
-              <h3>5. The controversial blue button</h3>
-              <p>This small button was among the team’s most debated decisions: what it said, what it looked like, and what it did. I started with the Think, Do, Feel exercise, working backward from the aspirational thoughts, feelings, and actions I was designing for, and narrowed to two concepts: <strong>$0.00</strong> and <strong>+Add</strong>. Testing with 16 participants found:</p>
-              <ul>
-                <li>Customers were delighted by the blue.</li>
-                <li>Customers could tell which content was Prime-eligible.</li>
-                <li>Customers did not understand +Add and thought it would charge them.</li>
-                <li>Customers thought selecting $0.00 meant they would own the music.</li>
-              </ul>
-              <p>The ownership confusion surprised me and showed how much the store context shaped perception. Under pressure to move on, I went ahead with $0.00 because it would be easy to pivot if needed.</p>
-            </div>
-            <div class="grid-2"><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Think, Do, Feel, worked backward from aspirations">
-                <img src="assets/think-do-feel.jpg" width="874" height="656" alt="Whiteboard Think, Do, Feel figure. Do: select button to get music, look for button to download, listen, casually collect. Think: this button is different, it won’t cost me, blue plus Prime means free. Feel: exclusive, special, delighted, valued, access is easy." loading="lazy">
-              </button>
-              <figcaption>Think, Do, Feel, worked backward from aspirations.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: The two tested concepts: $0">
-                <img src="assets/button-concepts.jpg" width="874" height="656" alt="Two blue buttons with the Prime badge: $0.00 and + Add." loading="lazy">
-              </button>
-              <figcaption>The two tested concepts: $0.00 and +Add.</figcaption>
-            </figure></div>
-            <div class="prose">
-              <h3>6. Last-minute pivots</h3>
-              <p><strong>Playback:</strong> beta customers said Prime streams took too long to start and often stopped. Performance and reliability <em>were</em> the product experience. A mini-hackathon fixed the critical issues.</p>
-              <p><strong>Wayfinding:</strong> customers struggled to find Prime Music, felt lost, and could not re-find music they had collected. They didn’t expect to look for it in a store; “renting” music did not exist in their minds. We pulled the Prime sections out into their own area in the top-level navigation. It tested well for discoverability, but the items were really deep links into the store, so customers wandered into other store areas without knowing why. The team was divided on this band-aid, but accepted it for launch.</p>
-            </div>
-            <blockquote>“Why can’t it be a standalone section? Why do I have to see buy buttons everywhere?” <cite>Anonymous beta participant</cite></blockquote>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Moving Prime out of the Music Store into its own top-level navigation section">
-                <img src="assets/navigation-pivot.jpg" width="746" height="675" alt="Two Android navigation drawers. Before: Popular in Prime and Prime Playlists sit under Music Store. After: a new Prime section with Prime Music and Prime Playlists sits at the top, above Your Library and Music Store." loading="lazy">
-              </button>
-              <figcaption>Moving Prime out of the Music Store into its own top-level navigation section.</figcaption>
-            </figure>
-            <div class="prose">
-              <p><strong>Playing and collecting:</strong> customers valued add-to-library but found it laborious and confusing. The team wanted to add playback to the store. I argued against it: stretching retail patterns optimized for selling would clutter the experience for everyone and ignore the complexity of playing, downloading, and managing music. Digging deeper, customers were also frustrated by seeing purchasable, non-Prime music. Our designs said buy, buy, buy, while customers felt they had already paid. A pure music experience needed a different strategy and many more months.</p>
-            </div>
-            <blockquote>“It is cumbersome to play selected music. When you click on ‘add to library’ from the initial Amazon music screen, a user would logically think he/she could play the music. Unfortunately, that is not the case.” <cite>Anonymous beta participant</cite></blockquote>
-          </div>
-        </section>
-
-        <section id="prototype">
-          <div class="wrap">
-            <p class="kicker"><span class="n">09</span> Prototype</p>
-            <h2>Prototype</h2>
-            <p class="cta-row"><a class="cta" href="prototype/">View interactive prototype →</a></p>
-            <p class="note">A clickable HTML/CSS/JS recreation of the key Prime Music screens and flows below: browse, moods and genres, album and playlist detail, add to library, Now Playing, library, navigation, and the Prime upsell. It uses placeholder artwork and example content. Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.</p>
-            <div class="prose">
-              <p>Every feature phase went through requirements, consensus, approvals, detailed specs, and handoffs. I sketched and white-boarded concepts and flows with my PM partner, then went straight into high-fidelity comps. That was practical because I was working with many existing patterns.</p>
-              <p>Next I sliced the comps into a prototype. Early on, I prototyped only the highest-risk areas. Prototyping was the most effective way to get feedback from the team, consensus from stakeholders, and approval from senior leadership. I shared prototypes as videos and reused them for usability testing.</p>
-              <p>Once the team had a working prototype, we put it in customers’ hands. The extended beta and guerrilla testing two months before launch surfaced the top risks: playback, wayfinding, and playing and collecting music.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: White-boarding concepts and flows before moving to high-fidelity comps">
-                <img src="assets/whiteboard-sessions.jpg" width="1600" height="553" alt="Photos of whiteboards covered in flow sketches and wireframes." loading="lazy">
-              </button>
-              <figcaption>White-boarding concepts and flows before moving to high-fidelity comps.</figcaption>
-            </figure>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Customer journeys from the CX spec: a Prime customer adding an album to their library, and a non-Prime customer browsing Prime Playlists">
-                <img src="assets/cx-spec.jpg" width="1377" height="447" alt="CX spec pages. Prime Customer Add to Library Journey A1 with four annotated screens, and Non-Prime Customer Browse Prime Playlists Journey E6 with four annotated screens." loading="lazy">
-              </button>
-              <figcaption>Customer journeys from the CX spec: a Prime customer adding an album to their library, and a non-Prime customer browsing Prime Playlists.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="ui-kit">
-          <div class="wrap">
-            <p class="kicker"><span class="n">10</span> UI Kit</p>
-            <h2>UI kit</h2>
-            <div class="prose">
-              <p>I produced six sets of documentation, two for each platform I owned, so engineering knew the requirements and QA could write test cases:</p>
-              <ul>
-                <li><strong>CX Spec:</strong> requirements and customer journeys.</li>
-                <li><strong>Visual Design Spec &amp; Keylines:</strong> the design system.</li>
-                <li><strong>Motion documentation:</strong> animation and timing keyframes for micro-interactions.</li>
-              </ul>
-              <p>This documentation needed the most rework of anything in the project and was the hardest to keep up to date. The spec pages below show its contents: a multi-device scaling guide, a typographic scale in REMs, metrics and grids with a vertical rhythm, touch states, template page margins, a blue Prime button set, and keylines for components such as the “Song Shoveler.”</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Visual Design Spec: scaling guide, typographic scale, metrics and grids, and touch states">
-                <img src="assets/visual-spec-scaling-type.jpg" width="1377" height="890" alt="Four spec pages: Scaling Guide for device buckets, Typographic Scale T1 to T9 in pixels and REMs, Metrics and Grids with vertical rhythm, and Touch States showing onTouch 0.5 opacity and disabled 0.3 opacity." loading="lazy">
-              </button>
-              <figcaption>Visual Design Spec: scaling guide, typographic scale, metrics and grids, and touch states.</figcaption>
-            </figure>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: The button set: Prime and purchase states">
-                <img src="assets/button-states.jpg" width="1378" height="595" alt="A matrix of blue and orange button variants including $0.00, + Add, and In Library states." loading="lazy">
-              </button>
-              <figcaption>The button set: Prime and purchase states.</figcaption>
-            </figure>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Keylines: page templates, the welcome screen, and the Song Shoveler row for non-Prime and Prime members">
-                <img src="assets/visual-spec-keylines.jpg" width="1377" height="890" alt="Template page margins for grid, list, and hybrid browse; a Prime Music welcome screen with measurements; and Song Shoveler keylines comparing non-Prime and Prime member rows with price, + Add, and In Library buttons." loading="lazy">
-              </button>
-              <figcaption>Keylines: page templates, the welcome screen, and the Song Shoveler row for non-Prime and Prime members.</figcaption>
-            </figure>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Animation and timing keyframes for the add-to-library micro-interaction">
-                <img src="assets/micro-interaction-timing.jpg" width="1378" height="476" alt="A timeline chart of the add-to-library micro-interaction with keyframes over time." loading="lazy">
-              </button>
-              <figcaption>Animation and timing keyframes for the add-to-library micro-interaction.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="final">
-          <div class="wrap">
-            <p class="kicker"><span class="n">11</span> Final Designs</p>
-            <h2>Final designs</h2>
-            <div class="prose">
-              <p>App designs for Kindle Fire and Android mobile, plus core screens from the service.</p>
-            </div>
-            <div class="grid-2"><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Kindle Fire: Prime Music home and lists">
-                <img src="assets/final-kindle-1.jpg" width="1377" height="777" alt="Two Kindle Fire tablets showing Prime Music store home with recommended content and Prime buttons." loading="lazy">
-              </button>
-              <figcaption>Kindle Fire: Prime Music home and lists.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Kindle Fire: Top albums in Prime and album detail">
-                <img src="assets/final-kindle-2.jpg" width="1377" height="777" alt="Two Kindle Fire tablets: Top Albums in Prime grid and an album detail with blue Prime buttons." loading="lazy">
-              </button>
-              <figcaption>Kindle Fire: Top albums in Prime and album detail.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Android: browse and playlists">
-                <img src="assets/final-android-1.jpg" width="1377" height="777" alt="Three Android phones showing Prime Music lists and playlists." loading="lazy">
-              </button>
-              <figcaption>Android: browse and playlists.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Android: Now Playing and playlist detail">
-                <img src="assets/final-android-2.jpg" width="1377" height="777" alt="Three Android phones showing Now Playing and playlist screens." loading="lazy">
-              </button>
-              <figcaption>Android: Now Playing and playlist detail.</figcaption>
-            </figure></div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime Music on Android">
-                <img src="assets/vision-screens.jpg" width="1380" height="776" alt="Three Android phones showing Prime Music home, Now Playing, and a playlist." loading="lazy">
-              </button>
-              <figcaption>Prime Music on Android: home, Now Playing, and a playlist.</figcaption>
-            </figure>
-            <div class="prose">
-              <h3>The service</h3>
-              <p>Prime members can listen to and download from more than one million songs, hundreds of curated playlists, and personalized ad-free stations.</p>
-              <ul>
-                <li><strong>Turbocharge your library:</strong> add any Prime-eligible song, album, or playlist to stream, take offline, or mix with your own collection.</li>
-                <li><strong>Complete your albums:</strong> if you own songs from a Prime-eligible album, find the remaining tracks from your library.</li>
-                <li><strong>Playlists for every moment:</strong> Prime Playlists for moods and activities, built by Amazon’s music experts.</li>
-              </ul>
-            </div>
-            <div class="grid-2"><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime Music songs, filterable by genre">
-                <img src="assets/library-songs.jpg" width="900" height="1200" alt="Android Prime Music screen, Songs tab with All Genres filter and add buttons." loading="lazy">
-              </button>
-              <figcaption>Prime Music songs, filterable by genre.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Complete your albums">
-                <img src="assets/complete-your-albums.jpg" width="900" height="1201" alt="Album page for Run The Jewels (Deluxe) with a prompt to add more Prime songs from the album." loading="lazy">
-              </button>
-              <figcaption>Complete your albums.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime playlist detail">
-                <img src="assets/prime-playlist-detail.jpg" width="900" height="1200" alt="A Prime playlist with artwork, play controls, and a track list with add buttons." loading="lazy">
-              </button>
-              <figcaption>Prime playlist detail.</figcaption>
-            </figure><figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime albums browse">
-                <img src="assets/browse-albums.jpg" width="480" height="640" alt="Android Prime Music Albums tab with album artwork tiles." loading="lazy">
-              </button>
-              <figcaption>Prime albums browse.</figcaption>
-            </figure></div>
-          </div>
-        </section>
-
-        <section id="outcome">
-          <div class="wrap">
-            <p class="kicker"><span class="n">12</span> Outcome</p>
-            <h2>Outcome</h2>
-            <div class="prose">
-              <h3>Launch</h3>
-              <p>On the evening of June 11 we began rolling out the updated Prime Music to Kindle Fire, iOS, Android, PC, Mac, and the Amazon Digital Music Store on mobile and desktop. The launch went off without a hitch, which was remarkable given the scale and complexity of the deployment.</p>
-              <h3>A not-so-fast follow</h3>
-              <p>Post-launch feedback mirrored what usability and beta testing had already found, and there was no quick fix. With launch pressure gone, we had the space to do it right. The diary study and journey map built empathy across the team and became a breakthrough. After six months of design and development, we shipped the first of many updates: a Prime-only area optimized for Prime members and fully separate from the Digital Music Store. We had finally created the minimal desirable experience for customers.</p>
-            </div>
-            <figure>
-              <button type="button" class="shot" aria-label="Enlarge image: Prime Music on Android">
-                <img src="assets/service-overview.jpg" width="1377" height="777" alt="Three Android phones showing the Prime Music experience." loading="lazy">
-              </button>
-              <figcaption>The redesigned Prime Music experience on Android, shown in the source.</figcaption>
-            </figure>
-            <div class="prose"><h3>What customers said</h3></div>
-            <blockquote>“Great update. You have fixed my one gripe about the app. Now I can stream without adding to my library. Thanks for listening to your customers.”</blockquote>
-            <blockquote>“Prime Music makes my Prime membership so much better! Amazon’s big data team did a great job understanding my music taste.”</blockquote>
-            <blockquote>“So many great songs. Think my Prime membership just paid for itself! Now I just have to get all my mobile devices loaded up!”</blockquote>
-            <blockquote>“I love this app! It frees up storage space on my phone, but allows me access to TONS of free music choices since I am a Prime member.”</blockquote>
-            <div class="prose">
-              <h3>What I learned</h3>
-              <p><strong>Your customers won’t forgive you because it was quicker and cheaper to build it <em>that</em> way.</strong> Bias for action turned into a bias for delivery. We measured outputs instead of outcomes, and let “how quickly can we build it?” define what we built. If we had asked “are we building the right thing?” as often as “will we meet our date?”, we would have launched a more reliable, intuitive, and polished product sooner. Customers should have defined viability before the technology and the date did.</p>
-              <p><strong>Launching is only the beginning.</strong> At launch I knew where the usability issues and missing features were, and how much effort had gone to non-critical features at the expense of performance and reliability. My dissatisfaction wasn’t perfectionism but an insistence on quality, which is the responsibility of the whole organization. I’m proud of what I accomplished for Amazon: the launch exposed what was broken in the product and in how we worked, and left the team better placed to learn. As Amazon says, it’s still Day One.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="metrics">
-          <div class="wrap">
-            <p class="kicker"><span class="n">13</span> Metrics</p>
-            <h2>Metrics</h2>
-            <div class="prose">
-              <p>After the redesign of Prime Music launched on iOS and Android, the median number of active customers rose by 71%. Despite that rapid growth, engagement, retention, adoption, and acquisition metrics improved:</p>
-            </div>
-            <div class="stats">
-              <div class="stat"><b>+71%</b><p>Median active customers</p></div>
-              <div class="stat"><b>+50%</b><p>Median active days per customer</p></div>
-              <div class="stat"><b>+36%</b><p>Median listening hours per customer</p></div>
-              <div class="stat"><b>+31%</b><p>New customer retention rate</p></div>
-            </div>
-            <p class="note">These are the figures reported in the source document. It does not give the measurement period, baselines, or method, and confidential details are omitted under NDA.</p>
-          </div>
-        </section>
-
-      </main>
-
-      <footer class="site">
-        <div class="wrap">
-          <p><strong>Suvarna Myneni</strong><br>Senior Product / UX Designer</p>
-          <p>Design of Amazon Prime Music for the Digital Music Store. Confidential information is omitted or obscured under NDA.</p>
-          <p><a href="https://www.linkedin.com/in/suvarnamyneni/">LinkedIn</a> · <a href="#top">Back to top</a></p>
-        </div>
-      </footer>
+<section class="cs-section" id="research"><div class="wrap">
+  <div class="head"><div class="num">06</div><div><h2>Research Methods</h2><p>Primary studies I ran or led, plus the customer and market research planning drew on. The source does not say which secondary findings came from which method, so those are grouped together.</p></div></div>
+  <div class="body">
+    <div class="grid g2">
+      <article class="card">
+        <div class="tag">Primary · Card sort</div>
+        <h3>Hierarchical card sort, 8 participants</h3>
+        <p>I hypothesized that Prime-eligible content should be prioritized differently when a customer does not have high purchase intent. With no qualitative data to support that, I ran a hierarchical card sort with eight participants to learn how customers think about categories of content and what matters most to them in the context of Prime.</p>
+        <p style="margin-top:10px">In the think-aloud, participants ranked content by what felt predictable and trustworthy as relevant, then by what made them curious, and last by what they were skeptical about. Genre ranked first and Playlist second; Featured ranked last.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Primary · Survey</div>
+        <h3>Large-scale playlist survey</h3>
+        <p>We surveyed casual listeners about how they identify with and choose playlists. Genre and mood were the strongest influences when choosing music. Activity was also reported. Genre is used to find music that matches a mood, or to exclude certain types of music. Customers think about moods and genres in heavily overlapping ways.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Primary · Usability</div>
+        <h3>Button test, 16 participants</h3>
+        <p>Two button concepts, $0.00 and +Add, were tested with 16 participants. Customers were delighted by the blue, could tell which content was Prime-eligible, did not understand +Add and thought it would charge them, and thought selecting $0.00 meant they would own the music. Detail is under Design Decisions.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Primary · Beta</div>
+        <h3>Extended beta and guerrilla testing</h3>
+        <p>Two months before launch we ran an extended beta and guerrilla user testing. The top risks were playback quality, performance, and stability; wayfinding; and playing and collecting music. These were the same issues we heard after launch.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Primary · Diary study</div>
+        <h3>Post-launch diary study and usability testing</h3>
+        <p>After launch I led a research plan to get deeper qualitative insight into pain points and opportunities. Over two weeks we ran a diary study and usability testing, and tested the viability of future concepts. I shared the learnings as a customer journey map. It compared the aspirational experience with today’s pain points, and helped the team see how broken the Library and Digital Music Store model was.</p>
+      </article>
+      <article class="card">
+        <div class="tag">Secondary · Market</div>
+        <h3>Customer and market research</h3>
+        <p>Planning drew on what the source calls extensive customer and market research. Download sales had been declining since 2019, with on-demand streaming a large share of industry revenue. Customers use playlists to match a mood or an activity, such as relaxing, working out, cleaning, or reading. Customers listen to only 19% of their own music library, which is mostly catalogue songs rather than albums. Price sensitivity was what moved customers to on-demand streaming. Paid-tier customers invest more in building their libraries and stream four times as much. Customers expect Amazon to know them and serve personalized recommendations.</p>
+      </article>
+    </div>
+    <article class="card">
+      <div class="tag">Secondary · Methods</div>
+      <h3>Published methods used in ideation</h3>
+      <p>I also drew on published methods: reversing the polarity of an assumption, from Marty Neumeier’s <em>Metaskills: Five Talents for the Robotic Age</em>, and the Think, Do, Feel exercise from <em>Gamestorming</em>.</p>
+    </article>
+    <figure class="figure">
+      <img src="assets/card-sort-results.jpg" width="1380" height="275" alt="Card sort results table. Genre rank 1 (weighted score 1.25), Playlist 2 (1.875), Recommended 3 (2.75), Popular 4 (4.5), New 4 (4.5), Featured 5 (6), with per-participant ranks P1 to P8 and a voice-of-the-customer quote for each.">
+      <figcaption>Card sort results with the voice of the customer. Genre: “Most obvious, I know what to expect.” Playlist: “I don’t have to think. Someone else put it together for me.” Featured: “Money was paid to feature this. It’s what ‘they’ want to push.”</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/journey-map.jpg" width="1378" height="602" alt="Prime Music customer journey map with aspirational and existing pain-point emotion lines across Explore and Re-find stages, opportunity tags, and customer goals. A magnified callout shows a frustrated customer quote about being asked to pay.">
+      <figcaption>The Prime Music customer journey map. It compared the aspirational experience with today’s pain points, and helped the team see how broken the Library and Digital Music Store model was.</figcaption>
+    </figure>
+    <div class="grid g2">
+      <figure class="figure">
+        <img src="assets/genre-moods.jpg" width="746" height="560" alt="Bubble chart of genres: Pop largest, with Alternative and Indie, Rock, Country, Christian and Gospel, Hip Hop, and Classical.">
+        <figcaption>Genres as a familiar way to browse.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/personalized-tiles.jpg" width="486" height="274" alt="A grid of music tiles with one tile marked by a heart.">
+        <figcaption>“Show me you know me”: customers expect personalized recommendations.</figcaption>
+      </figure>
     </div>
   </div>
+</div></section>
 
-  <dialog id="lightbox" aria-labelledby="lb-cap">
-    <div class="lb-bar">
-      <span class="lb-count" id="lb-count"></span>
-      <div class="lb-actions">
-        <button type="button" class="lb-btn" id="lb-prev">Previous</button>
-        <button type="button" class="lb-btn" id="lb-next">Next</button>
-        <button type="button" class="lb-btn" id="lb-close">Close</button>
-      </div>
-    </div>
-    <figure class="lb-frame">
-      <img id="lb-img" alt="">
-      <figcaption id="lb-cap"></figcaption>
+<section class="cs-section" id="competitive"><div class="wrap">
+  <div class="head"><div class="num">07</div><div><h2>Competitive Analysis</h2><p>The source document has no feature-by-feature competitor comparison. What it does show is the market Prime Music was entering, and how the team positioned against it.</p></div></div>
+  <div class="body">
+    <figure class="figure">
+      <img src="assets/streaming-landscape.jpg" width="1140" height="641" alt="Logos of music services: Rdio, Spotify, iTunes Radio, Beats Music, Prime Music, Deezer, Pandora, Google Play, and Rhapsody.">
+      <figcaption>The on-demand streaming landscape shown in the source: Rdio, Spotify, iTunes Radio, Beats Music, Deezer, Pandora, Google Play, and Rhapsody, with Prime Music among them.</figcaption>
     </figure>
-  </dialog>
+    <div style="overflow-x:auto">
+    <table style="min-width:760px">
+      <thead><tr><th>Product</th><th>Strength</th><th>Gap</th><th>Opportunity</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Prime Music</td>
+          <td>The best-value music service for Amazon customers. Prime Music joined two-day free shipping, unlimited streaming of popular movies and TV shows, more than 500,000 free ebooks, and unlimited photo storage. A curated selection of one million songs and catalogue titles at least six months old, to stream and download.</td>
+          <td>The business did not see itself as a standalone streaming service, but customers did, and they judged the experience that way. Not an exhaustive catalog.</td>
+          <td>Help finding music people will love from a selection they will actually listen to, rather than a “me-too” on-demand streaming service.</td>
+        </tr>
+        <tr>
+          <td>Rdio, Spotify, iTunes Radio, Beats Music, Deezer, Pandora, Google Play, Rhapsody</td>
+          <td>The streaming landscape the team was entering. The source does not record each service’s features, so this row is not a scorecard.</td>
+          <td>Threat named in the SWOT: clarity and aesthetics versus competitors.</td>
+          <td>Position against the set as value for Amazon customers, not feature parity with every peer.</td>
+        </tr>
+        <tr>
+          <td>Prime Instant Video and the Kindle Lending Library</td>
+          <td>In-house analogs customers already knew: Prime benefits you acquire, then use.</td>
+          <td>We assumed customers would follow the acquire-then-play path set by those products. That assumption turned out to be wrong for music.</td>
+          <td>Treat listening as its own behavior. A store pattern borrowed from video and ebooks did not match how people expected music to work.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div></section>
 
-  <script src="assets/site.js"></script>
+<section class="cs-section" id="personas"><div class="wrap">
+  <div class="head"><div class="num">08</div><div><h2>User Personas</h2><p>Representative personas composed from the customer segments, survey findings, and journey-map goals in this project. The source does not include formal research personas.</p></div></div>
+  <div class="body">
+    <p>These four are representative composites, not people from a persona study. Names stand in for the segments the work actually described.</p>
+    <div class="grid g2">
+      <article class="card persona">
+        <div class="avatar">ML</div>
+        <div>
+          <h3>Maya L., lean-back listener</h3>
+          <p>Casual listener. Puts music on for a mood or an activity such as relaxing, working out, cleaning, or reading. “I don’t have to think. Someone else put it together for me.”</p>
+          <p style="margin-top:10px"><strong>Goals.</strong> Music chosen for her, with as little typing as possible. <strong>Frustrations.</strong> Choosing between genre and mood when she thinks of them as the same thing. <strong>Needs.</strong> Prime Playlists and one combined filter list.</p>
+        </div>
+      </article>
+      <article class="card persona">
+        <div class="avatar">DR</div>
+        <div>
+          <h3>Devon R., lean-forward listener</h3>
+          <p>Actively controls and selects what he hears. Genre ranked first in the card sort because it felt predictable, which is the browse path this segment depends on.</p>
+          <p style="margin-top:10px"><strong>Goals.</strong> Find familiar music he loves, discover music Amazon thinks he will love, and get to results quickly. <strong>Frustrations.</strong> Could not re-find music he had collected, and did not expect to look for it in a store. <strong>Needs.</strong> Genre-led browse and a way back to recently played music.</p>
+        </div>
+      </article>
+      <article class="card persona">
+        <div class="avatar">PS</div>
+        <div>
+          <h3>Priya S., collector</h3>
+          <p>Represents the paid-tier customers who invest in building a library and stream four times as much. Customers overall listen to only 19% of their library, mostly catalogue songs rather than albums.</p>
+          <p style="margin-top:10px"><strong>Goals.</strong> Add Prime-eligible songs, albums, and playlists, take them offline, and mix them with her own collection. <strong>Frustrations.</strong> Add-to-library felt laborious, and owning some tracks on a Prime album did not make the rest easy to finish. <strong>Needs.</strong> Complete-your-albums and a library she can actually play.</p>
+        </div>
+      </article>
+      <article class="card persona">
+        <div class="avatar">JC</div>
+        <div>
+          <h3>Jordan C., Prime member in the store</h3>
+          <p>Already a Prime member, standing in the same Digital Music Store as someone who came to buy. Feels the music is already paid for.</p>
+          <p style="margin-top:10px"><strong>Goals.</strong> See what is Prime-eligible and collect it without a surprise charge. <strong>Frustrations.</strong> Buy buttons on music that already felt paid for, and a $0.00 button beta participants read as ownership. An anonymous beta participant asked why it could not be a standalone section. <strong>Needs.</strong> A Prime-only place to listen, separate from purchase.</p>
+        </div>
+      </article>
+    </div>
+    <p>The journey map listed customer goals by stage, including: “I want to find familiar music I love,” “I want to discover new music you think I’ll love,” “I want to type as little as possible and get to results as quickly as possible,” and “I want to quickly listen to music I’ve recently listened to.”</p>
+  </div>
+</div></section>
+
+<section class="cs-section" id="decisions"><div class="wrap">
+  <div class="head"><div class="num">09</div><div><h2>Design Decisions</h2><p>Nine principles made the calls visible. The hardest ones were what to lead with, how to say “free” inside a store, and what to change when beta said the model was wrong.</p></div></div>
+  <div class="body">
+    <p>A set of nine principles made my decision-making visible to the team.</p>
+    <figure class="figure">
+      <img src="assets/design-principles.jpg" width="1380" height="1035" alt="Nine principle cards on dark tiles.">
+      <figcaption>Design principles: Show the customer we know them. Personal and personalized. Do all the heavy lifting for the customer. Lead with meaningful content. Avoid dead ends. Build for customers on the go. Fit and finish matter. Design for the customer experience at all stages. Music is the experience.</figcaption>
+    </figure>
+
+    <div class="grid g2">
+      <article class="card">
+        <h3>1. Content first: playlists plus genres</h3>
+        <p><strong>Decision.</strong> Combine playlists and genres into the Prime Playlist browse experience, then pair the category ranking with feasibility scores for the rest of the browse structure.</p>
+        <p style="margin-top:10px"><strong>Why.</strong> The card sort showed we needed to prioritize playlist content, and that genres were a familiar way to browse. Genre ranked first, Playlist second, Featured last.</p>
+        <p style="margin-top:10px"><strong>Trade-off.</strong> Customer rank did not automatically become the information architecture. Feasibility scores decided what could actually ship in the structure.</p>
+      </article>
+      <article class="card">
+        <h3>2. Dreams of the bargain bin</h3>
+        <p><strong>Decision.</strong> Plan content as the opposite of a bargain bin, and tell a story behind the music.</p>
+        <p style="margin-top:10px"><strong>Why.</strong> I imagined the worst possible perception of Prime Music: the bargain bin in a record store, discounted music nobody wanted. Listing its traits, using the reverse-polarity method, gave me the opposite principles. Music nobody listens to became a popular, quality selection. Music by has-beens became timeless classics. A mass of no value became good value. Painful digging became personalized, curated, timely, and topical. Music given away became limited, scarce, and exclusive.</p>
+        <p style="margin-top:10px"><strong>Trade-off.</strong> Campaign composites got the team excited about that future, even though many concepts weren’t feasible for launch.</p>
+      </article>
+    </div>
+    <figure class="figure">
+      <img src="assets/browse-structure.jpg" width="1380" height="715" alt="A tree diagram of the store browse structure.">
+      <figcaption>The browse structure, built from category rankings and feasibility scores.</figcaption>
+    </figure>
+    <div class="grid g2">
+      <figure class="figure">
+        <img src="assets/bargain-bin.jpg" width="1600" height="1064" alt="Whiteboard: The Bargain Bin mapped to Prime Music. Music nobody listens to becomes popular, quality selection for everyone; music by has-beens becomes timeless classics; mass of no value becomes good value, your listening is better; painful to dig through becomes personalized, curated, timely, topical; cast to given away becomes limited, scarce, exclusive.">
+        <figcaption>Reversing the bargain bin into content principles.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/campaign-composites.jpg" width="1377" height="775" alt="Dark campaign tiles: Prime Classics, Pop Workout, 2013, and other editorial playlists.">
+        <figcaption>Campaign composites for storytelling around Prime content.</figcaption>
+      </figure>
+    </div>
+
+    <div class="grid g2">
+      <article class="card">
+        <h3>3. Moody listening: one filter list</h3>
+        <p><strong>Decision.</strong> Prime Playlist browse uses a single filter list for genre and mood together.</p>
+        <p style="margin-top:10px"><strong>Why.</strong> Genre and mood overlap so much in customers’ minds. One list reduces upfront decisions, removes the need to switch between genre and mood, and carries a stronger information scent.</p>
+        <p style="margin-top:10px"><strong>Trade-off.</strong> The survey named genre and mood as two influences. Separate lists would have mirrored that wording and forced a switch people do not actually make.</p>
+      </article>
+      <article class="card">
+        <h3>4. The Everything Store: “buy” Prime music for free</h3>
+        <p><strong>Decision.</strong> Model Prime Music on discovering and buying music in Amazon’s store, and let Prime members purchase Prime-eligible music for free.</p>
+        <p style="margin-top:10px"><strong>Why.</strong> The Store-plus-Prime direction felt wrong from the start, but the decision was made. Instead of catastrophizing, I analyzed the approach’s strengths: a familiar context, existing browse and search, a familiar taxonomy, one destination, and customers who already spend time in the store. The next challenge was showing which content was Prime-eligible and how to collect and play it.</p>
+        <p style="margin-top:10px"><strong>Trade-off.</strong> The SWOT weaknesses and threats stayed in the design: confusion with physical shopping, hard to find what is free, reliance on non-music teams, clarity and aesthetics versus competitors, accidental purchases, and patterns that were hard to extend.</p>
+      </article>
+    </div>
+    <figure class="figure">
+      <img src="assets/playlist-filter-flow.jpg" width="1380" height="656" alt="Four screens showing the Prime Playlists browse opening a single genre and mood filter list.">
+      <figcaption>Prime Playlist browse with a single combined filter list.</figcaption>
+    </figure>
+    <div class="grid g2">
+      <figure class="figure">
+        <img src="assets/swot.jpg" width="1380" height="1035" alt="Handwritten SWOT. Strengths: familiar context, existing browse and search patterns, familiar taxonomy, one destination, customers spend time in Store. Weaknesses: unfocused and unoptimized, confusion with physical shopping, hard to find free, extensibility of patterns, reliance on non-music teams. Opportunities: upsell and value comparison, traffic, promotion experiments, cross-category journeys, no Prime results lead to sales. Threats: clarity and aesthetics vs. competitors, accidental purchases, usability, not extensible, requires internet connection.">
+        <figcaption>SWOT of the Store + Prime Music approach.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/store-recommendations.jpg" width="1380" height="477" alt="Store carousels titled Prime Members Also Listened To and Customers Also Bought.">
+        <figcaption>Store recommendation patterns reused for Prime.</figcaption>
+      </figure>
+    </div>
+
+    <article class="card">
+      <h3>5. The controversial blue button</h3>
+      <p><strong>Decision.</strong> Ship the blue $0.00 button, not +Add.</p>
+      <p style="margin-top:10px"><strong>Why.</strong> This small button was among the team’s most debated decisions: what it said, what it looked like, and what it did. I started with the Think, Do, Feel exercise, working backward from the aspirational thoughts, feelings, and actions I was designing for, and narrowed to two concepts: $0.00 and +Add. Testing with 16 participants found that customers were delighted by the blue, could tell which content was Prime-eligible, did not understand +Add and thought it would charge them, and thought selecting $0.00 meant they would own the music.</p>
+      <p style="margin-top:10px"><strong>Trade-off.</strong> The ownership confusion surprised me and showed how much the store context shaped perception. Under pressure to move on, I went ahead with $0.00 because it would be easy to pivot if needed. Free was clear. Ownership was not.</p>
+    </article>
+    <div class="grid g2">
+      <figure class="figure">
+        <img src="assets/think-do-feel.jpg" width="874" height="656" alt="Whiteboard Think, Do, Feel figure. Do: select button to get music, look for button to download, listen, casually collect. Think: this button is different, it won’t cost me, blue plus Prime means free. Feel: exclusive, special, delighted, valued, access is easy.">
+        <figcaption>Think, Do, Feel, worked backward from aspirations.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/button-concepts.jpg" width="874" height="656" alt="Two blue buttons with the Prime badge: $0.00 and + Add.">
+        <figcaption>The two tested concepts: $0.00 and +Add.</figcaption>
+      </figure>
+    </div>
+
+    <article class="card">
+      <h3>6. Last-minute pivots</h3>
+      <p><strong>Playback.</strong> Beta customers said Prime streams took too long to start and often stopped. Performance and reliability were the product experience. A mini-hackathon fixed the critical issues.</p>
+      <p style="margin-top:10px"><strong>Wayfinding.</strong> Customers struggled to find Prime Music, felt lost, and could not re-find music they had collected. They didn’t expect to look for it in a store; “renting” music did not exist in their minds. We pulled the Prime sections out into their own area in the top-level navigation. It tested well for discoverability, but the items were really deep links into the store, so customers wandered into other store areas without knowing why. The team was divided on this band-aid, but accepted it for launch.</p>
+      <p style="margin-top:10px"><strong>Playing and collecting.</strong> Customers valued add-to-library but found it laborious and confusing. The team wanted to add playback to the store. I argued against it: stretching retail patterns optimized for selling would clutter the experience for everyone and ignore the complexity of playing, downloading, and managing music. Digging deeper, customers were also frustrated by seeing purchasable, non-Prime music. Our designs said buy, buy, buy, while customers felt they had already paid. A pure music experience needed a different strategy and many more months.</p>
+      <p style="margin-top:10px"><strong>Trade-off.</strong> The navigation change made Prime findable and still dumped people into the store. Playback inside the store would have been faster to bolt on and worse for both buyers and members. The standalone listening experience waited until after launch.</p>
+    </article>
+    <div class="grid g2">
+      <article class="card"><p>“Why can’t it be a standalone section? Why do I have to see buy buttons everywhere?”</p><p style="margin-top:8px">Anonymous beta participant</p></article>
+      <article class="card"><p>“It is cumbersome to play selected music. When you click on ‘add to library’ from the initial Amazon music screen, a user would logically think he/she could play the music. Unfortunately, that is not the case.”</p><p style="margin-top:8px">Anonymous beta participant</p></article>
+    </div>
+    <figure class="figure">
+      <img src="assets/navigation-pivot.jpg" width="746" height="675" alt="Two Android navigation drawers. Before: Popular in Prime and Prime Playlists sit under Music Store. After: a new Prime section with Prime Music and Prime Playlists sits at the top, above Your Library and Music Store.">
+      <figcaption>Moving Prime out of the Music Store into its own top-level navigation section.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="cs-section" id="prototype"><div class="wrap">
+  <div class="head"><div class="num">10</div><div><h2>Prototype</h2><p>Every feature phase went through requirements, consensus, approvals, detailed specs, and handoffs. Prototypes, often shared as video, were how the team decided.</p></div></div>
+  <div class="body">
+    <p><a href="prototype/">View interactive prototype</a></p>
+    <p>A clickable HTML/CSS/JS recreation of the key Prime Music screens and flows: browse, moods and genres, album and playlist detail, add to library, Now Playing, library, navigation, and the Prime upsell. It uses placeholder artwork and example content. Design prototype by Suvarna Myneni, for portfolio purposes, not an Amazon product.</p>
+    <div class="grid g3">
+      <article class="card"><h3>Sketch with a partner</h3><p>I sketched and white-boarded concepts and flows with my PM partner, then went straight into high-fidelity comps. That was practical because I was working with many existing patterns.</p></article>
+      <article class="card"><h3>Slice the risky parts</h3><p>Next I sliced the comps into a prototype. Early on, I prototyped only the highest-risk areas. I shared prototypes as videos and reused them for usability testing. They were the most effective way to get feedback from the team, consensus from stakeholders, and approval from senior leadership.</p></article>
+      <article class="card"><h3>Put it in customers’ hands</h3><p>Once the team had a working prototype, we put it in customers’ hands. The extended beta and guerrilla testing two months before launch surfaced the top risks: playback, wayfinding, and playing and collecting music.</p></article>
+    </div>
+    <figure class="figure">
+      <img src="assets/whiteboard-sessions.jpg" width="1600" height="553" alt="Photos of whiteboards covered in flow sketches and wireframes.">
+      <figcaption>White-boarding concepts and flows before moving to high-fidelity comps.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/cx-spec.jpg" width="1377" height="447" alt="CX spec pages. Prime Customer Add to Library Journey A1 with four annotated screens, and Non-Prime Customer Browse Prime Playlists Journey E6 with four annotated screens.">
+      <figcaption>Customer journeys from the CX spec: a Prime customer adding an album to their library, and a non-Prime customer browsing Prime Playlists.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="cs-section" id="uikit"><div class="wrap">
+  <div class="head"><div class="num">11</div><div><h2>UI Kit</h2><p>The project's own visual language, shown as a specimen.</p></div></div>
+  <div class="body">
+    <p>I produced six sets of documentation, two for each platform I owned, so engineering knew the requirements and QA could write test cases: a CX spec (requirements and customer journeys), a visual design spec and keylines (the design system), and motion documentation (animation and timing keyframes for micro-interactions). This documentation needed the most rework of anything in the project and was the hardest to keep up to date.</p>
+    <p>The product UI below is the Prime Music specimen: dark surfaces, a blue Prime button, an orange purchase button, and a grey In Library state. The type scale is the T1–T9 scale from the visual design spec (base 16px, 8dp rhythm on a 4dp grid), set in Amazon Ember in the product. Swatches use the hex values from the prototype, which follows that spec.</p>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#1f8ad2"></i><span>Prime button<br>#1F8AD2</span></div>
+      <div class="swatch"><i style="background:#3aa0e6"></i><span>Prime highlight<br>#3AA0E6</span></div>
+      <div class="swatch"><i style="background:#f26b1d"></i><span>Purchase<br>#F26B1D</span></div>
+      <div class="swatch"><i style="background:#ff9a1f"></i><span>Accent<br>#FF9A1F</span></div>
+      <div class="swatch"><i style="background:#f5a623"></i><span>Prime smile<br>#F5A623</span></div>
+      <div class="swatch"><i style="background:#3a4048"></i><span>In Library<br>#3A4048</span></div>
+      <div class="swatch"><i style="background:#16191e"></i><span>App background<br>#16191E</span></div>
+      <div class="swatch"><i style="background:#f2f4f6;box-shadow:inset 0 0 0 1px #c5cad3"></i><span>Text<br>#F2F4F6</span></div>
+    </div>
+    <div class="grid g2">
+      <article class="card" style="background:#16191e;color:#f2f4f6;border-color:#2c323a">
+        <h3 style="color:#f2f4f6">Type scale · T1–T9</h3>
+        <p style="color:#9aa3ad">Amazon Ember in product. Shown here in the page font so the sizes stay readable. Pixels at a 16px root, with the REM values from the spec.</p>
+        <p style="font-size:43px;line-height:1.1;margin-top:16px;color:#f2f4f6">T9 · 43px · 2.69rem</p>
+        <p style="font-size:30px;line-height:1.15;margin-top:8px;color:#f2f4f6">T7 · 30px · 1.88rem</p>
+        <p style="font-size:24px;line-height:1.2;margin-top:8px;color:#f2f4f6">T5 · 24px · 1.5rem</p>
+        <p style="font-size:18px;line-height:1.3;margin-top:8px;color:#f2f4f6">T3 · 18px · 1.13rem</p>
+        <p style="font-size:14px;line-height:1.4;margin-top:8px;color:#9aa3ad">T1 · 14px · 0.88rem</p>
+        <p style="margin-top:14px;color:#9aa3ad">Full scale: T1 14, T2 16, T3 18, T4 21, T5 24, T6 27, T7 30, T8 35, T9 43.</p>
+      </article>
+      <article class="card" style="background:#16191e;color:#f2f4f6;border-color:#2c323a">
+        <h3 style="color:#f2f4f6">Buttons and states</h3>
+        <p style="color:#9aa3ad">Blue means Prime-eligible and free. Orange is purchase. Grey is already in the library. Touch state is 0.5 opacity. Disabled is 0.3 opacity.</p>
+        <p style="margin-top:16px">
+          <span style="display:inline-block;background:#1f8ad2;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;margin:0 8px 8px 0">$0.00</span>
+          <span style="display:inline-block;background:#1f8ad2;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;margin:0 8px 8px 0">+ Add</span>
+          <span style="display:inline-block;background:#f26b1d;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;margin:0 8px 8px 0">$1.29</span>
+          <span style="display:inline-block;background:#3a4048;color:#d5d9de;padding:8px 14px;border-radius:2px;font-weight:500;font-size:13px;margin:0 8px 8px 0">In Library</span>
+          <span style="display:inline-block;background:#1f8ad2;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;opacity:.5;margin:0 8px 8px 0">onTouch</span>
+          <span style="display:inline-block;background:#1f8ad2;color:#fff;padding:8px 14px;border-radius:2px;font-weight:600;font-size:13px;opacity:.3">Disabled</span>
+        </p>
+        <p style="margin-top:14px;color:#9aa3ad">Components in the keylines include page templates (grid, list, and hybrid browse), the welcome screen, and the Song Shoveler row for non-Prime and Prime members.</p>
+      </article>
+    </div>
+    <figure class="figure">
+      <img src="assets/visual-spec-scaling-type.jpg" width="1377" height="890" alt="Four spec pages: Scaling Guide for device buckets, Typographic Scale T1 to T9 in pixels and REMs, Metrics and Grids with vertical rhythm, and Touch States showing onTouch 0.5 opacity and disabled 0.3 opacity.">
+      <figcaption>Visual Design Spec: scaling guide, typographic scale, metrics and grids, and touch states.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/button-states.jpg" width="1378" height="595" alt="A matrix of blue and orange button variants including $0.00, + Add, and In Library states.">
+      <figcaption>The button set: Prime and purchase states.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/visual-spec-keylines.jpg" width="1377" height="890" alt="Template page margins for grid, list, and hybrid browse; a Prime Music welcome screen with measurements; and Song Shoveler keylines comparing non-Prime and Prime member rows with price, + Add, and In Library buttons.">
+      <figcaption>Keylines: page templates, the welcome screen, and the Song Shoveler row for non-Prime and Prime members.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/micro-interaction-timing.jpg" width="1378" height="476" alt="A timeline chart of the add-to-library micro-interaction with keyframes over time.">
+      <figcaption>Animation and timing keyframes for the add-to-library micro-interaction.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="cs-section dark" id="final"><div class="wrap">
+  <div class="head"><div class="num">12</div><div><h2>Final Design</h2><p>App designs for Kindle Fire and Android mobile, plus core screens from the service.</p></div></div>
+  <div class="body">
+    <div class="grid g2">
+      <figure class="figure">
+        <img src="assets/final-kindle-1.jpg" width="1377" height="777" alt="Two Kindle Fire tablets showing Prime Music store home with recommended content and Prime buttons.">
+        <figcaption>Kindle Fire: Prime Music home and lists.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/final-kindle-2.jpg" width="1377" height="777" alt="Two Kindle Fire tablets: Top Albums in Prime grid and an album detail with blue Prime buttons.">
+        <figcaption>Kindle Fire: Top albums in Prime and album detail.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/final-android-1.jpg" width="1377" height="777" alt="Three Android phones showing Prime Music lists and playlists.">
+        <figcaption>Android: browse and playlists.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/final-android-2.jpg" width="1377" height="777" alt="Three Android phones showing Now Playing and playlist screens.">
+        <figcaption>Android: Now Playing and playlist detail.</figcaption>
+      </figure>
+    </div>
+    <figure class="figure">
+      <img src="assets/vision-screens.jpg" width="1380" height="776" alt="Three Android phones showing Prime Music home, Now Playing, and a playlist.">
+      <figcaption>Prime Music on Android: home, Now Playing, and a playlist.</figcaption>
+    </figure>
+    <div class="grid g3">
+      <article class="card"><h3>Turbocharge your library</h3><p>Prime members can listen to and download from more than one million songs, hundreds of curated playlists, and personalized ad-free stations. Add any Prime-eligible song, album, or playlist to stream, take offline, or mix with your own collection.</p></article>
+      <article class="card"><h3>Complete your albums</h3><p>If you own songs from a Prime-eligible album, find the remaining tracks from your library.</p></article>
+      <article class="card"><h3>Playlists for every moment</h3><p>Prime Playlists for moods and activities, built by Amazon’s music experts.</p></article>
+    </div>
+    <div class="grid g2">
+      <figure class="figure">
+        <img src="assets/library-songs.jpg" width="900" height="1200" alt="Android Prime Music screen, Songs tab with All Genres filter and add buttons.">
+        <figcaption>Prime Music songs, filterable by genre.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/complete-your-albums.jpg" width="900" height="1201" alt="Album page for Run The Jewels (Deluxe) with a prompt to add more Prime songs from the album.">
+        <figcaption>Complete your albums.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/prime-playlist-detail.jpg" width="900" height="1200" alt="A Prime playlist with artwork, play controls, and a track list with add buttons.">
+        <figcaption>Prime playlist detail.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/browse-albums.jpg" width="480" height="640" alt="Android Prime Music Albums tab with album artwork tiles.">
+        <figcaption>Prime albums browse.</figcaption>
+      </figure>
+    </div>
+  </div>
+</div></section>
+
+<section class="cs-section" id="outcome"><div class="wrap">
+  <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>The launch held. The model did not. Six months of follow-up work produced the Prime-only area the beta had asked for.</p></div></div>
+  <div class="body">
+    <div class="grid g2">
+      <article class="card">
+        <h3>Launch</h3>
+        <p>On the evening of June 11 we began rolling out the updated Prime Music to Kindle Fire, iOS, Android, PC, Mac, and the Amazon Digital Music Store on mobile and desktop. The launch went off without a hitch, which was remarkable given the scale and complexity of the deployment.</p>
+      </article>
+      <article class="card">
+        <h3>A not-so-fast follow</h3>
+        <p>Post-launch feedback mirrored what usability and beta testing had already found, and there was no quick fix. With launch pressure gone, we had the space to do it right. The diary study and journey map built empathy across the team and became a breakthrough. After six months of design and development, we shipped the first of many updates: a Prime-only area optimized for Prime members and fully separate from the Digital Music Store. We had finally created the minimal desirable experience for customers.</p>
+      </article>
+    </div>
+    <figure class="figure">
+      <img src="assets/service-overview.jpg" width="1377" height="777" alt="Three Android phones showing the Prime Music experience.">
+      <figcaption>The redesigned Prime Music experience on Android, shown in the source.</figcaption>
+    </figure>
+    <h3>What customers said</h3>
+    <div class="grid g2">
+      <article class="card"><p>“Great update. You have fixed my one gripe about the app. Now I can stream without adding to my library. Thanks for listening to your customers.”</p></article>
+      <article class="card"><p>“Prime Music makes my Prime membership so much better! Amazon’s big data team did a great job understanding my music taste.”</p></article>
+      <article class="card"><p>“So many great songs. Think my Prime membership just paid for itself! Now I just have to get all my mobile devices loaded up!”</p></article>
+      <article class="card"><p>“I love this app! It frees up storage space on my phone, but allows me access to TONS of free music choices since I am a Prime member.”</p></article>
+    </div>
+    <h3>What I learned</h3>
+    <div class="grid g2">
+      <article class="card">
+        <h3>Customers won’t forgive the cheaper path</h3>
+        <p>Your customers won’t forgive you because it was quicker and cheaper to build it <em>that</em> way. Bias for action turned into a bias for delivery. We measured outputs instead of outcomes, and let “how quickly can we build it?” define what we built. If we had asked “are we building the right thing?” as often as “will we meet our date?”, we would have launched a more reliable, intuitive, and polished product sooner. Customers should have defined viability before the technology and the date did.</p>
+      </article>
+      <article class="card">
+        <h3>Launching is only the beginning</h3>
+        <p>At launch I knew where the usability issues and missing features were, and how much effort had gone to non-critical features at the expense of performance and reliability. My dissatisfaction wasn’t perfectionism but an insistence on quality, which is the responsibility of the whole organization. I’m proud of what I accomplished for Amazon: the launch exposed what was broken in the product and in how we worked, and left the team better placed to learn. As Amazon says, it’s still Day One.</p>
+      </article>
+    </div>
+  </div>
+</div></section>
+
+<section class="cs-section" id="metrics"><div class="wrap">
+  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>After the redesign of Prime Music launched on iOS and Android, the median number of active customers rose by 71%. Despite that rapid growth, engagement, retention, adoption, and acquisition metrics improved.</p></div></div>
+  <div class="body">
+    <div class="grid g4">
+      <div class="metric"><div class="v">+71%</div><div class="l">Median active customers</div><div class="n">Measured</div></div>
+      <div class="metric"><div class="v">+50%</div><div class="l">Median active days per customer</div><div class="n">Measured</div></div>
+      <div class="metric"><div class="v">+36%</div><div class="l">Median listening hours per customer</div><div class="n">Measured</div></div>
+      <div class="metric"><div class="v">+31%</div><div class="l">New customer retention rate</div><div class="n">Measured</div></div>
+    </div>
+    <p>These are the figures reported in the source document. It does not give the measurement period, baselines, or method, and confidential details are omitted under NDA.</p>
+  </div>
+</div></section>
+</main>
+
+<div class="cs-next"><div class="wrap">
+  <div><small>Previous</small><a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a></div>
+  <div style="text-align:right"><small>Next project</small><a href="https://suvarnamyneni-project.github.io/cubic-translink-merchant-case-study/">Translink Merchant</a></div>
+</div></div>
+<footer class="cs-foot"><div class="wrap">© 2026 Suvarna Myneni · <a href="https://www.linkedin.com/in/suvarnamyneni/">LinkedIn</a></div></footer>
 </body>
 </html>
